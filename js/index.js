@@ -1,65 +1,88 @@
 const sections = document.querySelectorAll(".section");
 const container = document.querySelector(".container");
+const UpLink = document.getElementById("up");
+const downLink = document.getElementById("down");
+const leftLink = document.getElementById("left");
+const rightLink = document.getElementById("right");
+const otherSideLink = document.getElementById("other-side");
 
-let scrollHorizontally = false;
+let currentSection = 0;
 
-function GoToHorizontal(sectionNumber) {
-  if (container.scrollTop + 50 > sections[sectionNumber].offsetTop) {
-    if (!scrollHorizontally) {
-      container.classList.replace(
-        "container-scroll-vertically",
-        "container-scroll-horizontally"
-      );
-      sections[sectionNumber].scrollIntoView({
-        behavior: "auto",
-        block: "start",
-        inline: "nearest"
-      });
-      scrollHorizontally = true;
-    }
+let pageDirection = true;
+
+// scroll dirction functions 
+
+function scrollVertically () {
+  container.classList.add("container-scroll-vertically");
+  container.classList.remove("container-scroll-horizontally");
+}
+
+function scrollHorizontally () {
+  container.classList.add("container-scroll-horizontally");
+  container.classList.remove("container-scroll-vertically");
+}
+
+function reverseDirection () {
+  container.classList.add("change-direction");
+  pageDirection = false;
+}
+
+function rightDirection () {
+  container.classList.remove("change-direction");
+  pageDirection = true;
+}
+
+function changeDirection () {
+  if (pageDirection) {
+    reverseDirection();
+  }else {
+    rightDirection();
   }
 }
 
-function GoToVertical(sectionNumber) {
-  if (container.scrollLeft + 50 > sections[sectionNumber].offsetLeft) {
-    if (scrollHorizontally) {
-      container.classList.replace(
-        "container-scroll-horizontally",
-        "container-scroll-vertically"
-      );
-      sections[sectionNumber].scrollIntoView({
-        behavior: "auto",
-        block: "start",
-        inline: "nearest"
-      });
-      scrollHorizontally = false;
-    }
-  }
+// control page functions
+
+function goToSection (sectionNumber) {
+  sections[sectionNumber].scrollIntoView({
+    behavior: "auto",
+    block: "start",
+    inline: "nearest"
+  });
 }
 
-function BackToVertical(sectionNumber) {
-  if (container.scrollLeft + 50 < sections[sectionNumber + 1].offsetLeft) {
-    if (scrollHorizontally) {
-      container.classList.replace(
-        "container-scroll-horizontally",
-        "container-scroll-vertically"
-      );
-      sections[sectionNumber].scrollIntoView({
-        behavior: "auto",
-        block: "start",
-        inline: "nearest"
-      });
-      scrollHorizontally = false;
-    }
-  }
+// moving Function
+function goUp() {
+  scrollVertically();
 }
 
-function myFunction() {
-
-  GoToHorizontal(2);
-  BackToVertical(1);
-//   GoToVertical(4);
-//   BackToVertical(3);
+function goDown() {
+  scrollVertically();
 }
 
-container.addEventListener("scroll", myFunction);
+function goLeft() {
+  scrollHorizontally();
+}
+
+function goRight() {
+  scrollHorizontally();
+}
+
+function goOtherSide() {
+
+}
+
+// moving event listener 
+UpLink.addEventListener("click",goUp);
+downLink.addEventListener("click",goDown);
+leftLink.addEventListener("click",goLeft);
+rightLink.addEventListener("click",goRight);
+otherSideLink.addEventListener("click",goOtherSide);
+
+// on load
+goToSection(currentSection);
+
+// function scrollHandler () {
+
+// }
+
+// container.addEventListener("scroll", scrollHandler);
