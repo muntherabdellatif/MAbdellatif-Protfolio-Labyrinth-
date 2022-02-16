@@ -26,8 +26,8 @@ const sectionsNames = [
 ];
 
 let pageDirection = true;
-
-// scroll dirction functions
+let nextSectionPosition = "";
+// scroll direction functions
 
 function scrollVertically() {
   container.classList.add("container-scroll-vertically");
@@ -81,110 +81,88 @@ function showSection(sectionNumber) {
   console.log(sectionNumber);
   sections[sectionNumber].classList.remove("hidden");
 }
-
 // moving Function
-function goDown() {
-  scrollVertically();
-  if (sectionsPosition.current > sectionsPosition.bottom) {
-    reverseDirection();
-  } else {
-    rightDirection();
-  }
-  showSection(sectionsPosition.bottom);
-  goToSection(sectionsPosition.bottom);
-  setTimeout(() => {
-    sectionsPosition.top = sectionsPosition.current;
-    sectionsPosition.current = sectionsPosition.bottom;
-    sectionsPosition.bottom = sectionsPosition.otherSide;
-    sectionsPosition.otherSide = 5 - sectionsPosition.current;
-    showCurrent(sectionsPosition.current);
-  }, 400);
-  changeNavName();
+
+function findOppositeSide(direction) {
+  const side = ["bottom", "top", "left", "right"];
+  const opposite = ["top", "bottom", "right", "left"];
+  let oppositeSide;
+  side.forEach((s, i) => {
+    if (direction === side) {
+      oppositeSide = opposite[i];
+      return oppositeSide;
+    }
+  });
 }
 
-function goUp() {
-  scrollVertically();
-  if (sectionsPosition.current < sectionsPosition.top) {
-    reverseDirection();
-  } else {
-    rightDirection();
+function setScrollDirection(direction) {
+  if (direction === "bottom" || direction === "top") {
+    scrollVertically();
+  } else if (direction === "left" || direction === "right") {
+    scrollHorizontally();
   }
-  showSection(sectionsPosition.top);
-  goToSection(sectionsPosition.top);
-  setTimeout(() => {
-    sectionsPosition.bottom = sectionsPosition.current;
-    sectionsPosition.current = sectionsPosition.top;
-    sectionsPosition.top = sectionsPosition.otherSide;
-    sectionsPosition.otherSide = 5 - sectionsPosition.current;
-    showCurrent(sectionsPosition.current);
-  }, 400);
-  changeNavName();
+  if (direction === "bottom" || direction === "right") {
+    if (sectionsPosition.current > sectionsPosition[direction]) {
+      reverseDirection();
+    } else {
+      rightDirection();
+    }
+  } else if (direction === "left" || direction === "top") {
+    if (sectionsPosition.current < sectionsPosition[direction]) {
+      reverseDirection();
+    } else {
+      rightDirection();
+    }
+  }
 }
 
-function goLeft() {
-  scrollHorizontally();
-  if (sectionsPosition.current < sectionsPosition.left) {
-    reverseDirection();
-  } else {
-    rightDirection();
-  }
-  showSection(sectionsPosition.left);
-  goToSection(sectionsPosition.left);
-  setTimeout(() => {
-    sectionsPosition.right = sectionsPosition.current;
-    sectionsPosition.current = sectionsPosition.left;
-    sectionsPosition.left = sectionsPosition.otherSide;
-    sectionsPosition.otherSide = 5 - sectionsPosition.current;
-    showCurrent(sectionsPosition.current);
-  }, 400);
-  changeNavName();
+function reorderingSections(direction, oppositeSide) {
+  sectionsPosition[oppositeSide] = sectionsPosition.current;
+  sectionsPosition.current = sectionsPosition[direction];
+  sectionsPosition[direction] = sectionsPosition.otherSide;
+  sectionsPosition.otherSide = 5 - sectionsPosition.current;
 }
 
-function goRight() {
-  scrollHorizontally();
-  if (sectionsPosition.current > sectionsPosition.right) {
-    reverseDirection();
-  } else {
-    rightDirection();
-  }
-  showSection(sectionsPosition.right);
-  goToSection(sectionsPosition.right);
+function go(direction) {
+  nextSectionPosition=direction;
+  oppositeSide = findOppositeSide(direction);
+  setScrollDirection(direction);
+  showSection(sectionsPosition[direction]);
+  goToSection(sectionsPosition[direction]);
   setTimeout(() => {
-    sectionsPosition.left = sectionsPosition.current;
-    sectionsPosition.current = sectionsPosition.right;
-    sectionsPosition.right = sectionsPosition.otherSide;
-    sectionsPosition.otherSide = 5 - sectionsPosition.current;
+    reorderingSections(direction, oppositeSide);
     showCurrent(sectionsPosition.current);
   }, 400);
-  changeNavName();
 }
 
 function goOtherSide() {
   if (pageDirection) {
-    goRight();
+    go("right");
     setTimeout(() => {
-      goUp();
+      go("top");
       setTimeout(() => {
-        goUp();
+        go("top");
         setTimeout(() => {
-          goUp();
+          go("top");
           setTimeout(() => {
-            goRight();
+            go("right");
+            changeNavName();
             pageDirection = false;
           }, 400);
         }, 400);
       }, 400);
     }, 400);
   } else {
-    goDown();
+    go("bottom");
     setTimeout(() => {
-      goLeft();
+      go("left");
       setTimeout(() => {
-        goLeft();
+        go("left");
         setTimeout(() => {
-          goLeft();
+          go("left");
           setTimeout(() => {
-            goDown();
+            go("bottom");
+            changeNavName();
             pageDirection = true;
           }, 400);
         }, 400);
@@ -208,11 +186,25 @@ function changeNavName() {
 }
 
 // moving event listener
-downLink.addEventListener("click", goDown);
-UpLink.addEventListener("click", goUp);
-leftLink.addEventListener("click", goLeft);
-rightLink.addEventListener("click", goRight);
-otherSideLink.addEventListener("click", goOtherSide);
+downLink.addEventListener("click", () => {
+  go("bottom");
+  changeNavName();
+});
+UpLink.addEventListener("click", () => {
+  go("top");
+  changeNavName();
+});
+leftLink.addEventListener("click", () => {
+  go("left");
+  changeNavName();
+});
+rightLink.addEventListener("click", () => {
+  go("right");
+  changeNavName();
+});
+otherSideLink.addEventListener("click", () => {
+  goOtherSide();
+});
 
 // on load
 goToSection(sectionsPosition.current);
