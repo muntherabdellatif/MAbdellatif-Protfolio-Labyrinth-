@@ -18,6 +18,10 @@ body {
   scroll-behavior: smooth;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .section {
   position: relative;
   width: 100vw;
@@ -34,7 +38,7 @@ body {
 /* vertical scrolling */
 
 .container-scroll-vertically {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -52,7 +56,7 @@ body {
 /* horizontal scrolling */
 
 .container-scroll-horizontally {
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   overflow-x: scroll;
   display: flex;
   /* scroll-margin-left: 100px; */
