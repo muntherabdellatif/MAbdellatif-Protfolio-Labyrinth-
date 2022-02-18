@@ -6,6 +6,8 @@ const leftLink = document.getElementById('left');
 const rightLink = document.getElementById('right');
 const otherSideLink = document.getElementById('other-side');
 const navBar = document.querySelectorAll('nav ul li');
+const navList = document.querySelector('.nav-list');
+const dice = document.querySelector('.dice');
 
 const sectionsPosition = {
   current: 0,
@@ -243,6 +245,8 @@ showCurrent();
 changeNavName();
 
 container.onscroll = function () {
+  navList.classList.remove('active');
+
   let nextSection = sections[sectionsPosition[nextSectionPosition]];
   if (
     Math.abs(container.scrollTop) + 200 >= Math.abs(container.clientHeight) ||
@@ -253,3 +257,9 @@ container.onscroll = function () {
     isScrolling = false;
   }
 };
+
+// navbar on mobile
+
+dice.addEventListener('click', () => {
+  navList.classList.toggle('active');
+});
