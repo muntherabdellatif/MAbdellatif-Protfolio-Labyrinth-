@@ -8,6 +8,8 @@ const otherSideLink = document.getElementById('other-side');
 const navBar = document.querySelectorAll('nav ul li');
 const navList = document.querySelector('.nav-list');
 const dice = document.querySelector('.dice');
+const aboutImgContainer = document.querySelector('.about .image-container');
+const aboutImg = document.querySelector('.about .image-container img');
 
 const sectionsPosition = {
   current: 0,
@@ -19,7 +21,7 @@ const sectionsPosition = {
 };
 
 const sectionsNames = [
-  'section0',
+  'About',
   'section1',
   'section2',
   'section3',
@@ -263,3 +265,13 @@ container.onscroll = function () {
 dice.addEventListener('click', () => {
   navList.classList.toggle('active');
 });
+
+// about
+
+aboutImg.onmouseover = () => {
+  aboutImgContainer.classList.add('active');
+};
+
+aboutImg.onmouseout = () => {
+  aboutImgContainer.classList.remove('active');
+};
