@@ -10,6 +10,9 @@ const navList = document.querySelector('.nav-list');
 const dice = document.querySelector('.dice');
 const aboutImgContainer = document.querySelector('.about .image-container');
 const aboutImg = document.querySelector('.about .image-container img');
+const howAmIDescription = document.querySelector(
+  '.about .how-am-i .description'
+);
 
 const sectionsPosition = {
   current: 0,
@@ -248,16 +251,21 @@ changeNavName();
 
 container.onscroll = function () {
   navList.classList.remove('active');
-
-  let nextSection = sections[sectionsPosition[nextSectionPosition]];
-  if (
-    Math.abs(container.scrollTop) + 200 >= Math.abs(container.clientHeight) ||
-    Math.abs(container.scrollLeft) + 100 >= Math.abs(container.clientHeight)
-  ) {
-    isScrolling = true;
-  } else {
-    isScrolling = false;
+  console.log(container.scrollTop, howAmIDescription.clientHeight);
+  if (container.scrollTop >= howAmIDescription.clientHeight) {
+    howAmIDescription.classList.add('active');
+    console.log('ok');
   }
+
+  // let nextSection = sections[sectionsPosition[nextSectionPosition]];
+  // if (
+  //   Math.abs(container.scrollTop) + 200 >= Math.abs(container.clientHeight) ||
+  //   Math.abs(container.scrollLeft) + 100 >= Math.abs(container.clientHeight)
+  // ) {
+  //   isScrolling = true;
+  // } else {
+  //   isScrolling = false;
+  // }
 };
 
 // navbar on mobile
