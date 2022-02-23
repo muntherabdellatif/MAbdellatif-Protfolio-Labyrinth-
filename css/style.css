@@ -310,3 +310,55 @@ nav ul li:nth-child(5).color {
     }
   }
 }
+
+/* footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .icon {
+  font-size: 50px;
+}
+
+footer .icon a {
+  text-decoration: none;
+}
+
+footer .icon a ion-icon {
+  margin: 30px;
+  color: var(--color4);
+}
+
+footer .info {
+  font-size: 25px;
+  margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .info div {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+footer .info span {
+  vertical-align: middle;
+}
+
+footer .info ion-icon {
+  margin-right: 10px;
+  font-size: 41px;
+  color: var(--color2);
+}
+
+ion-icon {
+}

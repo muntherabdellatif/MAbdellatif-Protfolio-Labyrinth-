@@ -13,7 +13,7 @@
 
 .about {
   width: 100vw;
-  height: 200vh;
+  height: fit-content;
   overflow-x: hidden;
   cursor: url('../img/cursor.png');
 }
@@ -443,7 +443,8 @@
 
 /* about header  */
 
-.about .how-am-i .header h2 {
+.about .how-am-i .header h2,
+.about .my-job .header h2 {
   font-family: 'Lobster', cursive;
   margin: auto;
   font-size: 50px;
@@ -451,12 +452,22 @@
   z-index: 3;
 }
 
-.about .how-am-i .header h2 span:first-child::before {
+.about .how-am-i .header h2 span:first-child::before,
+.about .how-am-i .header h2 span:last-child::after {
+  content: 'WHO AM I ?';
+}
+
+.about .my-job .header h2 span:first-child::before,
+.about .my-job .header h2 span:last-child::after {
+  content: 'WHAT I AM DOING ?';
+}
+
+.about .how-am-i .header h2 span:first-child::before,
+.about .my-job .header h2 span:first-child::before {
   white-space: nowrap;
   overflow: hidden;
   width: 64%;
   height: 100%;
-  content: 'WHO AM I ?';
   color: var(--color2);
   position: absolute;
   z-index: 2;
@@ -472,14 +483,14 @@
   -o-transition: all 3s;
 }
 
-.about .how-am-i .header h2 span:last-child::after {
+.about .how-am-i .header h2 span:last-child::after,
+.about .my-job .header h2 span:last-child::after {
   text-align: end;
   right: 0;
   white-space: nowrap;
   overflow: hidden;
   width: 100%;
   height: 57%;
-  content: 'WHO AM I ?';
   color: var(--color1);
   position: absolute;
   z-index: 1;
@@ -495,7 +506,8 @@
   -o-transition: all 3s;
 }
 
-.about .how-am-i .header h2 span:first-child:hover::before {
+.about .how-am-i .header h2 span:first-child:hover::before,
+.about .my-job .header h2 span:first-child:hover::before {
   width: 100%;
   border-radius: 0;
   -webkit-border-radius: 0;
@@ -504,7 +516,8 @@
   -o-border-radius: 0;
 }
 
-.about .how-am-i .header h2 span:last-child:hover::after {
+.about .how-am-i .header h2 span:last-child:hover::after,
+.about .my-job .header h2 span:last-child:hover::after {
   height: 100%;
   border-radius: 0;
   -webkit-border-radius: 0;
@@ -513,7 +526,8 @@
   -o-border-radius: 0;
 }
 
-.about .how-am-i .description {
+.about .how-am-i .description,
+.about .my-job .description {
   width: 80%;
   display: block;
   margin: auto;
@@ -530,25 +544,29 @@
   -o-border-radius: 20px;
 }
 
-.about .how-am-i .description p {
+.about .how-am-i .description p,
+.about .my-job .description p {
   margin: 50px;
   font-size: 30px;
   color: var(--color1);
   font-family: 'DM Sans', sans-serif;
 }
 
-.about .how-am-i .description.active {
+.about .how-am-i .description.active,
+.about .my-job .description.active {
   background-color: var(--color4);
   opacity: 0.5;
   box-shadow: 0 0 20px 18px var(--color4);
 }
 
 @media (max-width: 769px) {
-  .about .how-am-i .description {
+  .about .how-am-i .description,
+  .about .my-job .description {
     width: 90%;
   }
 
-  .about .how-am-i .description p {
+  .about .how-am-i .description p,
+  .about .my-job .description {
     font-size: 20px;
   }
 }

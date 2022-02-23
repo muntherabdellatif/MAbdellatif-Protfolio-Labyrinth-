@@ -13,6 +13,8 @@ const aboutImg = document.querySelector('.about .image-container img');
 const howAmIDescription = document.querySelector(
   '.about .how-am-i .description'
 );
+const myJobDescription = document.querySelector('.about .my-job .description');
+const allIconTitle = document.querySelectorAll('ion-icon svg title');
 
 const sectionsPosition = {
   current: 0,
@@ -251,10 +253,23 @@ changeNavName();
 
 container.onscroll = function () {
   navList.classList.remove('active');
-  console.log(container.scrollTop, howAmIDescription.clientHeight);
-  if (container.scrollTop >= howAmIDescription.clientHeight) {
+
+  if (
+    howAmIDescription.getBoundingClientRect().top < window.innerHeight &&
+    howAmIDescription.getBoundingClientRect().bottom >= 0
+  ) {
     howAmIDescription.classList.add('active');
-    console.log('ok');
+  } else {
+    howAmIDescription.classList.remove('active');
+  }
+
+  if (
+    myJobDescription.getBoundingClientRect().top < window.innerHeight &&
+    myJobDescription.getBoundingClientRect().bottom >= 0
+  ) {
+    myJobDescription.classList.add('active');
+  } else {
+    myJobDescription.classList.remove('active');
   }
 
   // let nextSection = sections[sectionsPosition[nextSectionPosition]];
@@ -283,3 +298,10 @@ aboutImg.onmouseover = () => {
 aboutImg.onmouseout = () => {
   aboutImgContainer.classList.remove('active');
 };
+
+// remove all icon title
+
+allIconTitle.forEach((icon) => {
+  console.log(icon);
+  console.log('ok');
+});
