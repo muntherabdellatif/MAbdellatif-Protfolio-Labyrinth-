@@ -148,9 +148,8 @@ nav {
   padding: 0;
   position: fixed;
   top: 0;
-  left: 15px;
+  width: calc(100% - 15px);
   right: 15px;
-  width: calc(100% - 30px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -328,9 +327,14 @@ footer .icon a {
   text-decoration: none;
 }
 
-footer .icon a ion-icon {
+footer .icon a i {
   margin: 30px;
+  color: var(--color3);
+}
+
+footer .icon a:hover i {
   color: var(--color4);
+  text-shadow: 0 0 1.5px var(--color5);
 }
 
 footer .info {
@@ -340,6 +344,7 @@ footer .info {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  user-select: none;
 }
 
 footer .info div {
@@ -354,11 +359,18 @@ footer .info span {
   vertical-align: middle;
 }
 
-footer .info ion-icon {
+footer .info i {
   margin-right: 10px;
   font-size: 41px;
-  color: var(--color2);
+  color: var(--color3);
 }
 
-ion-icon {
+footer .info div:hover i {
+  color: var(--color4);
+  text-shadow: 0 0 1.5px var(--color5);
+}
+
+footer .info div.copied i {
+  font-size: 45px;
+  color: var(--color2);
 }

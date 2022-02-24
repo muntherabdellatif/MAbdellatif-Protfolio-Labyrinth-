@@ -298,13 +298,12 @@
   margin: 100px 13% 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-.about .tool ion-icon {
+.about .tool i {
   opacity: 0;
-  width: 70px;
-  height: 70px;
+  font-size: 70px;
   color: var(--color2);
   margin-left: 20px;
   animation-name: fade-up;
@@ -313,23 +312,23 @@
   animation-timing-function: ease-in-out;
 }
 
-.about .tool ion-icon:nth-child(1) {
+.about .tool i:nth-child(1) {
   animation-delay: 5000ms;
 }
 
-.about .tool ion-icon:nth-child(2) {
+.about .tool i:nth-child(2) {
   animation-delay: 5200ms;
 }
 
-.about .tool ion-icon:nth-child(3) {
+.about .tool i:nth-child(3) {
   animation-delay: 5400ms;
 }
 
-.about .tool ion-icon:nth-child(4) {
+.about .tool i:nth-child(4) {
   animation-delay: 5600ms;
 }
 
-.about .tool ion-icon:nth-child(5) {
+.about .tool i:nth-child(5) {
   animation-delay: 5800ms;
 }
 
@@ -351,9 +350,9 @@
     -o-transform: translateY(0px);
   }
 }
-.about .tool ion-icon:hover {
+.about .tool i:hover {
   color: var(--color4);
-  box-shadow: 0 0 25px var(--color5);
+  /* box-shadow: 0 0 25px var(--color5); */
 }
 
 /* split */
@@ -370,75 +369,6 @@
   height: 50px;
   margin: 50px 0 0;
   padding: 0;
-}
-
-/* about tablet media */
-@media (max-width: 769px) {
-  .about .header .image-container img {
-    width: 233px;
-  }
-  .about .header .image-container::after {
-    width: 290px;
-    height: 290px;
-  }
-  .about .header .image-container::before {
-    width: 290px;
-    height: 290px;
-  }
-  .about .header h1 span:nth-child(1) {
-    font-size: 65px;
-  }
-  .about .header h1 span:not(:nth-child(1)) {
-    font-size: 27px;
-  }
-  @keyframes rotateRight {
-    0% {
-    }
-    100% {
-    }
-  }
-  @keyframes rotateLeft {
-    0% {
-    }
-    100% {
-    }
-  }
-  @keyframes backRight {
-    0% {
-    }
-    100% {
-    }
-  }
-  @keyframes backLeft {
-    0% {
-    }
-    100% {
-    }
-  }
-}
-
-/* about mobile media */
-@media (max-width: 426px) {
-  .about .header {
-    flex-direction: column-reverse;
-  }
-  .about .header .image-container::before {
-    display: none;
-  }
-  .about .header .image-container::after {
-    width: 233px;
-    height: 112px;
-    top: 60%;
-    left: 0px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-  }
-  .about .tool {
-    margin: 0px 13% 0;
-  }
 }
 
 /* about header  */
@@ -559,14 +489,113 @@
   box-shadow: 0 0 20px 18px var(--color4);
 }
 
+/* about tablet media */
 @media (max-width: 769px) {
+  .about .header .image-container img {
+    width: 233px;
+  }
+
+  .about .header .image-container::after {
+    width: 290px;
+    height: 290px;
+  }
+
+  .about .header .image-container::before {
+    width: 290px;
+    height: 290px;
+  }
+
+  .about .header h1 span:nth-child(1) {
+    font-size: 65px;
+  }
+
+  .about .header h1 span:not(:nth-child(1)) {
+    font-size: 27px;
+  }
+
+  @keyframes rotateRight {
+    0% {
+    }
+    100% {
+    }
+  }
+
+  @keyframes rotateLeft {
+    0% {
+    }
+    100% {
+    }
+  }
+
+  @keyframes backRight {
+    0% {
+    }
+    100% {
+    }
+  }
+
+  @keyframes backLeft {
+    0% {
+    }
+    100% {
+    }
+  }
+
   .about .how-am-i .description,
   .about .my-job .description {
     width: 90%;
   }
 
   .about .how-am-i .description p,
-  .about .my-job .description {
+  .about .my-job .description p {
+    font-size: 20px;
+  }
+}
+
+/* about mobile media */
+@media (max-width: 426px) {
+  .about .header {
+    flex-direction: column-reverse;
+  }
+
+  .about .header .image-container::before {
+    display: none;
+  }
+
+  .about .header .image-container::after {
+    width: 233px;
+    height: 112px;
+    top: 60%;
+    left: 0px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .about .tool {
+    margin: 0px 13% 0;
+  }
+
+  .about .tool i {
+    font-size: 45px;
+  }
+
+  .about .how-am-i .header h2,
+  .about .my-job .header h2 {
+    font-size: 30px;
+  }
+
+  footer .info {
+    flex-direction: column;
+  }
+
+  footer .info div {
+    width: 100%;
+  }
+
+  footer .info span {
     font-size: 20px;
   }
 }

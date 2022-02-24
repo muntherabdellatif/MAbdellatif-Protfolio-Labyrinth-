@@ -14,7 +14,7 @@ const howAmIDescription = document.querySelector(
   '.about .how-am-i .description'
 );
 const myJobDescription = document.querySelector('.about .my-job .description');
-const allIconTitle = document.querySelectorAll('ion-icon svg title');
+const links = document.querySelectorAll('footer .info div');
 
 const sectionsPosition = {
   current: 0,
@@ -27,7 +27,7 @@ const sectionsPosition = {
 
 const sectionsNames = [
   'About',
-  'section1',
+  'certificate and education',
   'section2',
   'section3',
   'section4',
@@ -299,9 +299,16 @@ aboutImg.onmouseout = () => {
   aboutImgContainer.classList.remove('active');
 };
 
-// remove all icon title
+// copy link
 
-allIconTitle.forEach((icon) => {
-  console.log(icon);
-  console.log('ok');
+links.forEach((link) => {
+  link.addEventListener('click', function () {
+    links.forEach((l) => {
+      l.title = 'copy';
+      l.classList.remove('copied');
+    });
+    link.title = 'copied';
+    link.classList.add('copied');
+    navigator.clipboard.writeText(this.dataset.slink);
+  });
 });
