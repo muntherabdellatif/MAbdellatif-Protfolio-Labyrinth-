@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  },
+  "name": "mabdellatif-protfolio-labyrinth",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muntherabdellatif/MAbdellatif-Protfolio-Labyrinth-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muntherabdellatif/MAbdellatif-Protfolio-Labyrinth-/issues"
+  },
+  "homepage": "https://github.com/muntherabdellatif/MAbdellatif-Protfolio-Labyrinth-#readme"
+}

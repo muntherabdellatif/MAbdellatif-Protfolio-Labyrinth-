@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Mochiy+Pop+P+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@700&family=Lobster&family=Mochiy+Pop+P+One&display=swap');
+
+$color1: #19282f;
+$color2: #b33030;
+$color3: #a1b57d;
+$color4: #d3eca7;
+$color5: #fff;
+$color6: #19282f73;
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color2;
+  z-index: 200;
+  position: relative;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $color3;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: $color4;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    font-size: 50px;
+
+    a {
+      text-decoration: none;
+
+      i {
+        margin: 30px;
+        color: $color3;
+      }
+    }
+
+    a:hover {
+      i {
+        color: $color4;
+        text-shadow: 0 0 1.5px var(--color5);
+      }
+    }
+  }
+
+  .info {
+    font-size: 25px;
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+
+    div {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      i {
+        margin-right: 10px;
+        font-size: 41px;
+        color: $color3;
+      }
+
+      span {
+        vertical-align: middle;
+      }
+    }
+
+    div:hover {
+      i {
+        color: $color4;
+        text-shadow: 0 0 1.5px var(--color5);
+      }
+    }
+
+    div.copied {
+      i {
+        font-size: 45px;
+        color: $color2;
+      }
+    }
+  }
+}
