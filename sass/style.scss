@@ -30,26 +30,19 @@
         }
 
         span:not(:first-child)::after {
+          @include animation(typing 1s steps(22) forwards);
           content: '';
           left: 0;
           position: absolute;
           height: 100%;
           width: 100%;
           background-color: $color1;
-          animation: typing 1s steps(22) forwards;
-          -webkit-animation: typing 1s steps(22) forwards;
         }
 
-        span:nth-child(2)::after {
-          animation-delay: 1.5s;
-        }
-
-        span:nth-child(3)::after {
-          animation-delay: 3s;
-        }
-
-        span:nth-child(4)::after {
-          animation-delay: 4.5s;
+        @for $i from 2 through 4 {
+          span:nth-child(#{$i})::after {
+            animation-delay: calc(1.5s * (#{$i} - 1));
+          }
         }
 
         span:nth-child(1) {
@@ -66,17 +59,14 @@
         position: relative;
 
         img {
-          border-radius: 50%;
+          @include borderRadius(50%);
           width: 300px;
           z-index: 3;
           position: relative;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          -ms-border-radius: 50%;
-          -o-border-radius: 50%;
         }
 
         &:before {
+          @include borderRadius(50% 50% 100% 0% / 100% 50% 50% 0%);
           z-index: 1;
           top: 2px;
           left: -60px;
@@ -85,14 +75,10 @@
           width: 360px;
           height: 360px;
           background-color: $color4;
-          border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
-          -webkit-border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
-          -moz-border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
-          -ms-border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
-          -o-border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
         }
 
         &:after {
+          @include borderRadius(50% 50% 0% 100% / 50% 100% 0% 50%);
           z-index: 2;
           top: 2px;
           right: -60px;
@@ -101,45 +87,28 @@
           width: 360px;
           height: 360px;
           background-color: $color2;
-          border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
-          -webkit-border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
-          -moz-border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
-          -ms-border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
-          -o-border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
         }
 
         &:after {
           transition-duration: 0.4s;
-          animation-name: backRight;
-          animation-duration: 0.4s;
-          animation-timing-function: ease-in-out;
-          animation-fill-mode: both;
+          @include animation(backRight 0.4s both ease-in-out);
         }
 
         &:before {
           transition-duration: 0.4s;
-          animation-name: backLeft;
-          animation-duration: 0.4s;
-          animation-timing-function: ease-in-out;
-          animation-fill-mode: both;
+          @include animation(backLeft 0.4s both ease-in-out);
         }
       }
 
       .image-container.active {
         &:after {
           transition-duration: 0.4s;
-          animation-name: rotateRight;
-          animation-duration: 0.4s;
-          animation-timing-function: ease-in-out;
-          animation-fill-mode: both;
+          @include animation(rotateRight 0.4s both ease-in-out);
         }
 
         &:before {
           transition-duration: 0.4s;
-          animation-name: rotateLeft;
-          animation-duration: 0.4s;
-          animation-timing-function: ease-in-out;
-          animation-fill-mode: both;
+          @include animation(rotateLeft 0.4s both ease-in-out);
         }
       }
     }
@@ -155,34 +124,17 @@
         font-size: 70px;
         color: $color2;
         margin-left: 20px;
-        animation-name: fade-up;
-        animation-duration: 0.8s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in-out;
+        @include animation(fade-up 0.8s forwards ease-in-out);
 
         &:hover {
           color: $color4;
         }
       }
 
-      i:nth-child(1) {
-        animation-delay: 5000ms;
-      }
-
-      i:nth-child(2) {
-        animation-delay: 5200ms;
-      }
-
-      i:nth-child(3) {
-        animation-delay: 5400ms;
-      }
-
-      i:nth-child(4) {
-        animation-delay: 5600ms;
-      }
-
-      i:nth-child(5) {
-        animation-delay: 5800ms;
+      @for $i from 1 through 5 {
+        i:nth-child(#{$i}) {
+          animation-delay: calc(5000ms + (200ms * #{$i}));
+        }
       }
     }
 
@@ -210,6 +162,8 @@
           z-index: 3;
 
           span:first-child::before {
+            @include borderRadius(50%50%25%75%/50%75%25%50%);
+            @include transition(all 3s);
             white-space: nowrap;
             overflow: hidden;
             width: 64%;
@@ -217,19 +171,11 @@
             color: $color2;
             position: absolute;
             z-index: 2;
-            border-radius: 50% 50% 25% 75% / 50% 75% 25% 50%;
-            -webkit-border-radius: 50% 50% 25% 75% / 50% 75% 25% 50%;
-            -moz-border-radius: 50% 50% 25% 75% / 50% 75% 25% 50%;
-            -ms-border-radius: 50% 50% 25% 75% / 50% 75% 25% 50%;
-            -o-border-radius: 50% 50% 25% 75% / 50% 75% 25% 50%;
-            transition: all 3s;
-            -webkit-transition: all 3s;
-            -moz-transition: all 3s;
-            -ms-transition: all 3s;
-            -o-transition: all 3s;
           }
 
           span:last-child::after {
+            @include borderRadius(50% 50% 75% 25% / 75% 50% 50% 25%);
+            @include transition(all 3s);
             text-align: end;
             right: 0;
             white-space: nowrap;
@@ -239,53 +185,27 @@
             color: $color1;
             position: absolute;
             z-index: 1;
-            border-radius: 50% 50% 75% 25% / 75% 50% 50% 25%;
-            -webkit-border-radius: 50% 50% 75% 25% / 75% 50% 50% 25%;
-            -moz-border-radius: 50% 50% 75% 25% / 75% 50% 50% 25%;
-            -ms-border-radius: 50% 50% 75% 25% / 75% 50% 50% 25%;
-            -o-border-radius: 50% 50% 75% 25% / 75% 50% 50% 25%;
-            transition: all 3s;
-            -webkit-transition: all 3s;
-            -moz-transition: all 3s;
-            -ms-transition: all 3s;
-            -o-transition: all 3s;
           }
 
           span:first-child:hover::before {
+            @include borderRadius(0);
             width: 100%;
-            border-radius: 0;
-            -webkit-border-radius: 0;
-            -moz-border-radius: 0;
-            -ms-border-radius: 0;
-            -o-border-radius: 0;
           }
 
           span:last-child:hover::after {
+            @include borderRadius(0);
             height: 100%;
-            border-radius: 0;
-            -webkit-border-radius: 0;
-            -moz-border-radius: 0;
-            -ms-border-radius: 0;
-            -o-border-radius: 0;
           }
         }
       }
 
       .description {
+        @include borderRadius(20px);
+        @include transition(all 4s);
         width: 80%;
         display: block;
         margin: auto;
         background-color: $color1;
-        transition: all 4s;
-        -webkit-transition: all 4s;
-        -moz-transition: all 4s;
-        -ms-transition: all 4s;
-        -o-transition: all 4s;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
 
         p {
           margin: 50px;
@@ -325,6 +245,13 @@
     }
   }
 
+  .certificate {
+    width: 200vw;
+    height: 100vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
   nav {
     margin: 0;
     padding: 0;
@@ -342,11 +269,10 @@
       display: none;
 
       &:before {
+        @include animation(changeNumber 6s infinite);
         content: '';
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
-        animation: changeNumber 6s infinite;
-        -webkit-animation: changeNumber 6s infinite;
         color: $color4;
         font-size: 50px;
         text-shadow: -6px 6px 12px $color6;
@@ -374,9 +300,8 @@
       }
 
       li.color {
+        @include animation(color 1.5s forwards ease-in-out);
         pointer-events: none;
-        animation: color 1.5s forwards ease-in-out;
-        -webkit-animation: color 1.5s forwards ease-in-out;
       }
 
       li:nth-child(1).color {
@@ -432,150 +357,78 @@
 
   @keyframes backRight {
     0% {
+      @include borderRadius(50%);
+      @include transform(45deg, 0, 0);
       background-color: #c38e6c;
       top: -23px;
       right: -23px;
       width: 345px;
       height: 345px;
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
     }
     100% {
+      @include borderRadius(50% 50% 0% 100% / 50% 100% 0% 50%);
+      @include transform(0, 0, 0);
       top: 2px;
       right: -60px;
-      transform: rotate(0deg);
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
-      -webkit-border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
-      -moz-border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
-      -ms-border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
-      -o-border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
     }
   }
 
   @keyframes backLeft {
     0% {
+      @include borderRadius(50%);
+      @include transform(-45deg, 50px, 50px);
       width: 200px;
       height: 200px;
-      transform: rotate(-45deg) translate(50px, 50px);
-      -webkit-transform: rotate(-45deg) translate(50px, 50px);
-      -moz-transform: rotate(-45deg) translate(50px, 50px);
-      -ms-transform: rotate(-45deg) translate(50px, 50px);
-      -o-transform: rotate(-45deg) translate(50px, 50px);
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
     }
     100% {
+      @include borderRadius(50% 50% 100% 0% / 100% 50% 50% 0%);
+      @include transform(0, 0, 0);
       width: 360px;
       height: 360px;
-      transform: rotate(0deg);
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
-      -webkit-border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
-      -moz-border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
-      -ms-border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
-      -o-border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
     }
   }
 
   @keyframes fade-up {
     0% {
+      @include transform(0, 0, 50px);
       opacity: 0;
-      transform: translateY(50px);
-      -webkit-transform: translateY(50px);
-      -moz-transform: translateY(50px);
-      -ms-transform: translateY(50px);
-      -o-transform: translateY(50px);
     }
     100% {
+      @include transform(0, 0, 0);
       opacity: 100%;
-      transform: translateY(0px);
-      -webkit-transform: translateY(0px);
-      -moz-transform: translateY(0px);
-      -ms-transform: translateY(0px);
-      -o-transform: translateY(0px);
     }
   }
 
   @keyframes rotateRight {
     0% {
+      @include borderRadius(50% 50% 0% 100% / 50% 100% 0% 50%);
+      @include transform(0, 0, 0);
       top: 2px;
       right: -60px;
-      transform: rotate(0deg);
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
-      -webkit-border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
-      -moz-border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
-      -ms-border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
-      -o-border-radius: 50% 50% 0% 100% / 50% 100% 0% 50%;
     }
     100% {
+      @include borderRadius(50%);
+      @include transform(45deg, 0, 0);
       background-color: #c38e6c;
       top: -23px;
       right: -23px;
       width: 345px;
       height: 345px;
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
     }
   }
 
   @keyframes rotateLeft {
     0% {
+      @include borderRadius(50% 50% 100% 0% / 100% 50% 50% 0%);
+      @include transform(0, 0, 0);
       width: 360px;
       height: 360px;
-      transform: rotate(0deg);
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
-      -webkit-border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
-      -moz-border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
-      -ms-border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
-      -o-border-radius: 50% 50% 100% 0% / 100% 50% 50% 0%;
     }
     100% {
+      @include borderRadius(50%);
+      @include transform(-45deg, 50px, 50px);
       width: 200px;
       height: 200px;
-      transform: rotate(-45deg) translate(50px, 50px);
-      -webkit-transform: rotate(-45deg) translate(50px, 50px);
-      -moz-transform: rotate(-45deg) translate(50px, 50px);
-      -ms-transform: rotate(-45deg) translate(50px, 50px);
-      -o-transform: rotate(-45deg) translate(50px, 50px);
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
     }
   }
 
@@ -652,6 +505,7 @@
       }
 
       ul.active {
+        @include animation(showNav 0.8s both ease-in-out);
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -662,8 +516,6 @@
         padding: 0;
         margin: 0;
         background-color: $color6;
-        animation: showNav 0.8s both ease-in-out;
-        -webkit-animation: showNav 0.8s both ease-in-out;
       }
     }
   }
@@ -724,17 +576,12 @@
         }
 
         .image-container::after {
+          @include borderRadius(50%);
+          @include animation(none);
           width: 233px;
           height: 112px;
           top: 60%;
           left: 0px;
-          border-radius: 50%;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          -ms-border-radius: 50%;
-          -o-border-radius: 50%;
-          animation: none;
-          -webkit-animation: none;
         }
       }
 

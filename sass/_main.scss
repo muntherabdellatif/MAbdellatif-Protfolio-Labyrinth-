@@ -8,6 +8,34 @@ $color4: #d3eca7;
 $color5: #fff;
 $color6: #19282f73;
 
+@mixin borderRadius($r) {
+  border-radius: $r;
+  -webkit-border-radius: $r;
+  -moz-border-radius: $r;
+  -ms-border-radius: $r;
+  -o-border-radius: $r;
+}
+
+@mixin animation($animationMode) {
+  animation: $animationMode;
+  -webkit-animation: $animationMode;
+}
+
+@mixin transition($T) {
+  transition: $T;
+  -webkit-transition: $T;
+  -moz-transition: $T;
+  -ms-transition: $T;
+  -o-transition: $T;
+}
+
+@mixin transform($deg, $x, $y) {
+  transform: rotate($deg) translate($x, $y);
+  -webkit-transform: rotate($deg) translate($x, $y);
+  -moz-transform: rotate($deg) translate($x, $y);
+  -ms-transform: rotate($deg) translate($x, $y);
+  -o-transform: rotate($deg) translate($x, $y);
+}
 body {
   width: 100vw;
   height: 100vh;

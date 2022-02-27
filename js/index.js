@@ -77,7 +77,7 @@ function changeDirection() {
 function goToSection(sectionNumber) {
   sections[sectionNumber].scrollIntoView({
     behavior: 'smooth',
-    block: 'end',
+    block: 'start',
     inline: 'nearest',
   });
 }
