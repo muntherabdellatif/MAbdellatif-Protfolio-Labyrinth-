@@ -17,17 +17,17 @@ const myJobDescription = document.querySelector('.about .my-job .description');
 const links = document.querySelectorAll('footer .info div');
 
 const sectionsPosition = {
-  current: 0,
-  otherSide: 5,
-  left: 1,
-  right: 4,
-  top: 3,
-  bottom: 2,
+  current: 1,
+  otherSide: 0,
+  left: 2,
+  right: 5,
+  top: 4,
+  bottom: 3,
 };
 
 const sectionsNames = [
   'About',
-  'certificate and education',
+  'Certificates',
   'section2',
   'section3',
   'section4',

@@ -188,19 +188,23 @@ footer {
         width: 300px;
         z-index: 3;
         position: relative; }
+      .container .about .header .image-container:before, .container .about .header .image-container:after {
+        transition-duration: 0.4s;
+        top: 2px;
+        content: '';
+        position: absolute;
+        width: 360px;
+        height: 360px; }
       .container .about .header .image-container:before {
         border-radius: 50% 50% 100% 0%/100% 50% 50% 0%;
         -webkit-border-radius: 50% 50% 100% 0%/100% 50% 50% 0%;
         -moz-border-radius: 50% 50% 100% 0%/100% 50% 50% 0%;
         -ms-border-radius: 50% 50% 100% 0%/100% 50% 50% 0%;
         -o-border-radius: 50% 50% 100% 0%/100% 50% 50% 0%;
+        animation: backLeft 0.4s both ease-in-out;
+        -webkit-animation: backLeft 0.4s both ease-in-out;
         z-index: 1;
-        top: 2px;
         left: -60px;
-        content: '';
-        position: absolute;
-        width: 360px;
-        height: 360px;
         background-color: #d3eca7; }
       .container .about .header .image-container:after {
         border-radius: 50% 50% 0% 100%/50% 100% 0% 50%;
@@ -208,22 +212,11 @@ footer {
         -moz-border-radius: 50% 50% 0% 100%/50% 100% 0% 50%;
         -ms-border-radius: 50% 50% 0% 100%/50% 100% 0% 50%;
         -o-border-radius: 50% 50% 0% 100%/50% 100% 0% 50%;
-        z-index: 2;
-        top: 2px;
-        right: -60px;
-        content: '';
-        position: absolute;
-        width: 360px;
-        height: 360px;
-        background-color: #b33030; }
-      .container .about .header .image-container:after {
-        transition-duration: 0.4s;
         animation: backRight 0.4s both ease-in-out;
-        -webkit-animation: backRight 0.4s both ease-in-out; }
-      .container .about .header .image-container:before {
-        transition-duration: 0.4s;
-        animation: backLeft 0.4s both ease-in-out;
-        -webkit-animation: backLeft 0.4s both ease-in-out; }
+        -webkit-animation: backRight 0.4s both ease-in-out;
+        z-index: 2;
+        right: -60px;
+        background-color: #b33030; }
     .container .about .header .image-container.active:after {
       transition-duration: 0.4s;
       animation: rotateRight 0.4s both ease-in-out;
@@ -268,23 +261,25 @@ footer {
     font-size: 50px;
     position: relative;
     z-index: 3; }
+    .container .about .text-container .header h2 span:first-child::before,
+    .container .about .text-container .header h2 span:last-child::after {
+      transition: all 3s;
+      -webkit-transition: all 3s;
+      -moz-transition: all 3s;
+      -ms-transition: all 3s;
+      -o-transition: all 3s;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap; }
     .container .about .text-container .header h2 span:first-child::before {
       border-radius: 50% 50% 25% 75%/50% 75% 25% 50%;
       -webkit-border-radius: 50% 50% 25% 75%/50% 75% 25% 50%;
       -moz-border-radius: 50% 50% 25% 75%/50% 75% 25% 50%;
       -ms-border-radius: 50% 50% 25% 75%/50% 75% 25% 50%;
       -o-border-radius: 50% 50% 25% 75%/50% 75% 25% 50%;
-      transition: all 3s;
-      -webkit-transition: all 3s;
-      -moz-transition: all 3s;
-      -ms-transition: all 3s;
-      -o-transition: all 3s;
-      white-space: nowrap;
-      overflow: hidden;
       width: 64%;
       height: 100%;
       color: #b33030;
-      position: absolute;
       z-index: 2; }
     .container .about .text-container .header h2 span:last-child::after {
       border-radius: 50% 50% 75% 25%/75% 50% 50% 25%;
@@ -292,19 +287,11 @@ footer {
       -moz-border-radius: 50% 50% 75% 25%/75% 50% 50% 25%;
       -ms-border-radius: 50% 50% 75% 25%/75% 50% 50% 25%;
       -o-border-radius: 50% 50% 75% 25%/75% 50% 50% 25%;
-      transition: all 3s;
-      -webkit-transition: all 3s;
-      -moz-transition: all 3s;
-      -ms-transition: all 3s;
-      -o-transition: all 3s;
       text-align: end;
       right: 0;
-      white-space: nowrap;
-      overflow: hidden;
       width: 100%;
       height: 57%;
       color: #19282f;
-      position: absolute;
       z-index: 1; }
     .container .about .text-container .header h2 span:first-child:hover::before {
       border-radius: 0;
@@ -351,10 +338,51 @@ footer {
   .container .about .my-job .header h2 span:last-child::after {
     content: 'WHAT I AM DOING ?'; }
 .container .certificate {
-  width: 200vw;
+  width: 100vw;
   height: 100vh;
   overflow-x: scroll;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+  .container .certificate .arrow-box {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .container .certificate .arrow-box .text ul {
+      list-style: none;
+      margin: 0;
+      overflow-y: hidden;
+      height: 60px; }
+      .container .certificate .arrow-box .text ul li {
+        font-size: 50px;
+        position: relative;
+        overflow: hidden;
+        min-width: 375px;
+        color: #fff; }
+        .container .certificate .arrow-box .text ul li:after {
+          animation: typing-2 1s steps(16) infinite alternate;
+          -webkit-animation: typing-2 1s steps(16) infinite alternate;
+          margin-left: 30px;
+          content: '\f061';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          left: 0;
+          right: -5px;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background-color: #b33030; }
+      .container .certificate .arrow-box .text ul li {
+        animation: show 4s steps(1) infinite forwards;
+        -webkit-animation: show 4s steps(1) infinite forwards; }
+    .container .certificate .arrow-box i {
+      color: black;
+      font-size: 50px;
+      font-weight: 900;
+      z-index: 1; }
 .container nav {
   margin: 0;
   padding: 0;
@@ -397,35 +425,51 @@ footer {
       animation: color 1.5s forwards ease-in-out;
       -webkit-animation: color 1.5s forwards ease-in-out;
       pointer-events: none; }
-    .container nav ul li:nth-child(1).color {
+    .container nav ul li:nth-child(1).color,
+    .container nav ul li:nth-child(5).color {
       animation-delay: 0.5s; }
-    .container nav ul li:nth-child(2).color {
+    .container nav ul li:nth-child(2).color,
+    .container nav ul li:nth-child(4).color {
       animation-delay: 0.25s; }
     .container nav ul li:nth-child(3).color {
       animation-delay: 0s; }
-    .container nav ul li:nth-child(4).color {
-      animation-delay: 0.25s; }
-    .container nav ul li:nth-child(5).color {
-      animation-delay: 0.5s; }
-@keyframes color {
+@keyframes show {
   0% {
+    transform: rotate(0) translate(0, 0%);
+    -webkit-transform: rotate(0) translate(0, 0%);
+    -moz-transform: rotate(0) translate(0, 0%);
+    -ms-transform: rotate(0) translate(0, 0%);
+    -o-transform: rotate(0) translate(0, 0%); }
+  50% {
+    transform: rotate(0) translate(0, -100%);
+    -webkit-transform: rotate(0) translate(0, -100%);
+    -moz-transform: rotate(0) translate(0, -100%);
+    -ms-transform: rotate(0) translate(0, -100%);
+    -o-transform: rotate(0) translate(0, -100%); }
+  100% {
+    transform: rotate(0) translate(0, -100%);
+    -webkit-transform: rotate(0) translate(0, -100%);
+    -moz-transform: rotate(0) translate(0, -100%);
+    -ms-transform: rotate(0) translate(0, -100%);
+    -o-transform: rotate(0) translate(0, -100%); } }
+@keyframes color {
+  0%,
+    100% {
     color: var(--color5);
     text-shadow: 0 0 1px var(--color5); }
-  25% {
+  25%,
+    75% {
     color: #d3eca7;
     text-shadow: 0 0 2px var(--color5); }
   50% {
     color: #a1b57d;
-    text-shadow: 0 0 3px var(--color5); }
-  75% {
-    color: #d3eca7;
-    text-shadow: 0 0 2px var(--color5); }
-  100% {
-    color: var(--color5);
-    text-shadow: 0 0 1px var(--color5); } }
+    text-shadow: 0 0 3px var(--color5); } }
 @keyframes typing {
   100% {
     left: 100%; } }
+@keyframes typing-2 {
+  100% {
+    left: 80%; } }
 @keyframes backRight {
   0% {
     border-radius: 50%;

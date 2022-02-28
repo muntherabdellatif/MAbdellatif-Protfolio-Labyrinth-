@@ -65,38 +65,30 @@
           position: relative;
         }
 
-        &:before {
-          @include borderRadius(50% 50% 100% 0% / 100% 50% 50% 0%);
-          z-index: 1;
+        &:before,
+        &:after {
+          transition-duration: 0.4s;
           top: 2px;
-          left: -60px;
           content: '';
           position: absolute;
           width: 360px;
           height: 360px;
+        }
+
+        &:before {
+          @include borderRadius(50% 50% 100% 0% / 100% 50% 50% 0%);
+          @include animation(backLeft 0.4s both ease-in-out);
+          z-index: 1;
+          left: -60px;
           background-color: $color4;
         }
 
         &:after {
           @include borderRadius(50% 50% 0% 100% / 50% 100% 0% 50%);
-          z-index: 2;
-          top: 2px;
-          right: -60px;
-          content: '';
-          position: absolute;
-          width: 360px;
-          height: 360px;
-          background-color: $color2;
-        }
-
-        &:after {
-          transition-duration: 0.4s;
           @include animation(backRight 0.4s both ease-in-out);
-        }
-
-        &:before {
-          transition-duration: 0.4s;
-          @include animation(backLeft 0.4s both ease-in-out);
+          z-index: 2;
+          right: -60px;
+          background-color: $color2;
         }
       }
 
@@ -161,29 +153,29 @@
           position: relative;
           z-index: 3;
 
-          span:first-child::before {
-            @include borderRadius(50%50%25%75%/50%75%25%50%);
+          span:first-child::before,
+          span:last-child::after {
             @include transition(all 3s);
-            white-space: nowrap;
             overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+          }
+
+          span:first-child::before {
+            @include borderRadius(50% 50% 25% 75% / 50% 75% 25% 50%);
             width: 64%;
             height: 100%;
             color: $color2;
-            position: absolute;
             z-index: 2;
           }
 
           span:last-child::after {
             @include borderRadius(50% 50% 75% 25% / 75% 50% 50% 25%);
-            @include transition(all 3s);
             text-align: end;
             right: 0;
-            white-space: nowrap;
-            overflow: hidden;
             width: 100%;
             height: 57%;
             color: $color1;
-            position: absolute;
             z-index: 1;
           }
 
@@ -246,10 +238,68 @@
   }
 
   .certificate {
-    width: 200vw;
+    width: 100vw;
     height: 100vh;
     overflow-x: scroll;
     overflow-y: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .arrow-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .text {
+        ul {
+          list-style: none;
+          margin: 0;
+          overflow-y: hidden;
+          height: 60px;
+
+          li {
+            font-size: 50px;
+            position: relative;
+            overflow: hidden;
+            min-width: 375px;
+            color: $color5;
+
+            &:after {
+              @include animation(typing-2 1s steps(16) infinite alternate);
+              margin-left: 30px;
+              content: '\f061';
+              font-family: 'Font Awesome 5 Free';
+              font-weight: 900;
+              left: 0;
+              right: -5px;
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              background-color: $color2;
+            }
+          }
+
+          li {
+            @include animation(show 4s steps(1) infinite forwards);
+          }
+        }
+      }
+
+      i {
+        color: black;
+        font-size: 50px;
+        font-weight: 900;
+        z-index: 1;
+      }
+    }
+
+    .certificate-container {
+      .certificate-box {
+      }
+    }
   }
 
   nav {
@@ -304,34 +354,42 @@
         pointer-events: none;
       }
 
-      li:nth-child(1).color {
+      li:nth-child(1).color,
+      li:nth-child(5).color {
         animation-delay: 0.5s;
       }
 
-      li:nth-child(2).color {
+      li:nth-child(2).color,
+      li:nth-child(4).color {
         animation-delay: 0.25s;
       }
 
       li:nth-child(3).color {
         animation-delay: 0s;
       }
+    }
+  }
 
-      li:nth-child(4).color {
-        animation-delay: 0.25s;
-      }
-
-      li:nth-child(5).color {
-        animation-delay: 0.5s;
-      }
+  @keyframes show {
+    0% {
+      @include transform(0, 0, 0%);
+    }
+    50% {
+      @include transform(0, 0, -100%);
+    }
+    100% {
+      @include transform(0, 0, -100%);
     }
   }
 
   @keyframes color {
-    0% {
+    0%,
+    100% {
       color: var(--color5);
       text-shadow: 0 0 1px var(--color5);
     }
-    25% {
+    25%,
+    75% {
       color: $color4;
       text-shadow: 0 0 2px var(--color5);
     }
@@ -339,19 +397,17 @@
       color: $color3;
       text-shadow: 0 0 3px var(--color5);
     }
-    75% {
-      color: $color4;
-      text-shadow: 0 0 2px var(--color5);
-    }
-    100% {
-      color: var(--color5);
-      text-shadow: 0 0 1px var(--color5);
-    }
   }
 
   @keyframes typing {
     100% {
       left: 100%;
+    }
+  }
+
+  @keyframes typing-2 {
+    100% {
+      left: 80%;
     }
   }
 
