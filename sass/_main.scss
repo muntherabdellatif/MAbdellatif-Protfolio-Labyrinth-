@@ -36,6 +36,15 @@ $color6: #19282f73;
   -ms-transform: rotate($deg) translate($x, $y);
   -o-transform: rotate($deg) translate($x, $y);
 }
+
+@mixin transformY($deg, $x, $y) {
+  transform: rotateY($deg) translate($x, $y);
+  -webkit-transform: rotateY($deg) translate($x, $y);
+  -moz-transform: rotateY($deg) translate($x, $y);
+  -ms-transform: rotateY($deg) translate($x, $y);
+  -o-transform: rotateY($deg) translate($x, $y);
+}
+
 body {
   width: 100vw;
   height: 100vh;

@@ -15,6 +15,10 @@ const howAmIDescription = document.querySelector(
 );
 const myJobDescription = document.querySelector('.about .my-job .description');
 const links = document.querySelectorAll('footer .info div');
+const barContainer = document.querySelectorAll(
+  '.certificate .content .controller'
+);
+const certificateBox = document.querySelectorAll('.certificate .content .box');
 
 const sectionsPosition = {
   current: 1,
@@ -311,4 +315,31 @@ links.forEach((link) => {
     link.classList.add('copied');
     navigator.clipboard.writeText(this.dataset.slink);
   });
+});
+
+// 3D animation bar
+
+function setProgressBar(e) {
+  const width = this.clientWidth;
+  const position = e.offsetX;
+  e.srcElement.querySelector('.bar').style.width = `${position}px`;
+  const deg = (position / width) * 360;
+  let shift = 0;
+  const boxId = e.srcElement.dataset.id;
+  console.log(position);
+  if (position >= 50 && position < 100) {
+    shift = 150;
+  }
+  if (position >= 100 && position < 220) {
+    shift = -150;
+  }
+  if (position >= 220 && position < 400) {
+    shift = 50;
+  }
+  certificateBox[boxId].style.transform = `rotateY(${deg}deg)
+   translate(${shift}px,0)`;
+}
+
+barContainer.forEach((bar) => {
+  bar.addEventListener('click', setProgressBar);
 });
