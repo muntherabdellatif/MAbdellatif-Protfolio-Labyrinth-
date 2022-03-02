@@ -62,7 +62,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $color2;
+  background: $color4;
   z-index: 200;
   position: relative;
   border-radius: 10px;
@@ -73,7 +73,7 @@ body {
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: $color4;
+  background-color: $color2;
 }
 
 footer {

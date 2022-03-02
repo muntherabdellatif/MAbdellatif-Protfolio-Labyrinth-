@@ -13,7 +13,7 @@ body {
   background: #19282f; }
 
 ::-webkit-scrollbar-thumb {
-  background: #b33030;
+  background: #d3eca7;
   z-index: 200;
   position: relative;
   border-radius: 10px; }
@@ -22,7 +22,7 @@ body {
   background: #a1b57d; }
 
 ::-webkit-scrollbar-corner {
-  background-color: #d3eca7; }
+  background-color: #b33030; }
 
 footer {
   display: flex;
@@ -350,7 +350,8 @@ footer {
   .container .certificate .arrow-box {
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    width: 80vw; }
     .container .certificate .arrow-box .text ul {
       list-style: none;
       margin: 0;
@@ -386,10 +387,13 @@ footer {
   .container .certificate .certificate-container .certificate-box {
     display: flex; }
     .container .certificate .certificate-container .certificate-box .content {
-      margin: 0 40px;
+      margin: 0 100px;
       width: 400px;
+      height: 400px;
       perspective: 1200px;
       position: relative; }
+      .container .certificate .certificate-container .certificate-box .content:hover .controller {
+        opacity: 100%; }
       .container .certificate .certificate-container .certificate-box .content .box {
         transition: transform 2s;
         -webkit-transition: transform 2s;
@@ -443,6 +447,12 @@ footer {
           font-size: 21px;
           background-color: #d3eca7; }
       .container .certificate .certificate-container .certificate-box .content .controller {
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+        opacity: 0;
         position: absolute;
         top: calc(100% + 50px);
         width: 440px;
@@ -471,6 +481,28 @@ footer {
           background-color: #a1b57d;
           pointer-events: none;
           position: relative; }
+  .container .certificate footer {
+    width: 550px;
+    clip-path: polygon(100% 0, 100% 50%, 86% 100%, 0 99%, 32% 0);
+    height: 72vh;
+    background-color: #19282f; }
+    .container .certificate footer .icon {
+      margin-left: 30px; }
+      .container .certificate footer .icon a {
+        margin-right: 15px; }
+    .container .certificate footer .info {
+      flex-direction: column;
+      width: 100%;
+      align-items: flex-start;
+      margin-bottom: 30px; }
+      .container .certificate footer .info div {
+        width: 80%; }
+        .container .certificate footer .info div span {
+          color: #fff; }
+      .container .certificate footer .info .phone {
+        margin: 22px 0 0 66px; }
+      .container .certificate footer .info .email {
+        margin: 50px 0 0 121px; }
 .container nav {
   margin: 0;
   padding: 0;

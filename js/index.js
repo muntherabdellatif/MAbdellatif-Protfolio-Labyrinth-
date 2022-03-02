@@ -22,11 +22,11 @@ const certificateBox = document.querySelectorAll('.certificate .content .box');
 
 const sectionsPosition = {
   current: 1,
-  otherSide: 0,
+  otherSide: 4,
   left: 2,
-  right: 5,
-  top: 4,
-  bottom: 3,
+  right: 3,
+  top: 5,
+  bottom: 0,
 };
 
 const sectionsNames = [
