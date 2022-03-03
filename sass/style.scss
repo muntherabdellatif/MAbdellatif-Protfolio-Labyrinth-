@@ -60,7 +60,7 @@
 
         img {
           @include borderRadius(50%);
-          width: 300px;
+          width: 250px;
           z-index: 3;
           position: relative;
         }
@@ -332,6 +332,7 @@
               color: white;
               backface-visibility: hidden;
               -webkit-backface-visibility: hidden;
+
               h2 {
                 margin-left: 20px;
               }
@@ -799,6 +800,129 @@
         .header {
           h2 {
             font-size: 30px;
+          }
+        }
+      }
+    }
+
+    .certificate {
+      .arrow-box {
+        width: 100vw;
+
+        .text {
+          ul {
+            height: 55px;
+
+            li {
+              font-size: 54px;
+              min-width: 360px;
+
+              &:after {
+                margin-left: 75px;
+              }
+            }
+          }
+        }
+
+        i {
+          color: black;
+          font-size: 50px;
+          font-weight: 900;
+          z-index: 1;
+        }
+      }
+
+      .certificate-container {
+        .certificate-box {
+          display: flex;
+
+          .content {
+            margin: 0 50px;
+            width: 250px;
+            height: 400px;
+            perspective: 800px;
+
+            .box {
+              @include transition(transform 2s);
+              width: 100%;
+              height: 400px;
+
+              .face {
+                width: 100%;
+                height: 100%;
+              }
+
+              .face1 {
+                width: 250px;
+              }
+
+              .face2 {
+                @include transformY(125.5deg, 250px, 0);
+                width: 250px;
+              }
+
+              .face3 {
+                @include transformY(-125.5deg, -250px, 0);
+                width: 250px;
+              }
+            }
+
+            .controller {
+              width: 290px;
+              height: 20px;
+
+              &:before,
+              &:after {
+                font-size: 30px;
+                top: -35px;
+              }
+
+              &:after {
+                left: 90px;
+              }
+              &:before {
+                right: 110px;
+              }
+            }
+          }
+        }
+      }
+
+      footer {
+        width: 400px;
+        clip-path: polygon(100% 0, 100% 50%, 86% 100%, 0 99%, 32% 0);
+        margin-left: 20px;
+
+        .icon {
+          margin-left: 30px;
+          font-size: 45px;
+
+          a {
+            margin-right: 5px;
+          }
+        }
+
+        .info {
+          margin-bottom: 30px;
+
+          div {
+            width: 80%;
+
+            span {
+              font-size: 20px;
+            }
+
+            i {
+              font-size: 40px;
+            }
+          }
+
+          .phone {
+            margin: 0 0 0 40px;
+          }
+
+          .email {
+            margin: 50px 0 0 85px;
           }
         }
       }

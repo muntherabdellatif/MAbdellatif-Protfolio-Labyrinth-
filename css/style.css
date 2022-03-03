@@ -185,7 +185,7 @@ footer {
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
-        width: 300px;
+        width: 250px;
         z-index: 3;
         position: relative; }
       .container .about .header .image-container:before, .container .about .header .image-container:after {
@@ -802,6 +802,85 @@ footer {
       font-size: 35px; }
   .container .about .text-container .header h2 {
     font-size: 30px; }
+  .container .certificate .arrow-box {
+    width: 100vw; }
+    .container .certificate .arrow-box .text ul {
+      height: 55px; }
+      .container .certificate .arrow-box .text ul li {
+        font-size: 54px;
+        min-width: 360px; }
+        .container .certificate .arrow-box .text ul li:after {
+          margin-left: 75px; }
+    .container .certificate .arrow-box i {
+      color: black;
+      font-size: 50px;
+      font-weight: 900;
+      z-index: 1; }
+  .container .certificate .certificate-container .certificate-box {
+    display: flex; }
+    .container .certificate .certificate-container .certificate-box .content {
+      margin: 0 50px;
+      width: 250px;
+      height: 400px;
+      perspective: 800px; }
+      .container .certificate .certificate-container .certificate-box .content .box {
+        transition: transform 2s;
+        -webkit-transition: transform 2s;
+        -moz-transition: transform 2s;
+        -ms-transition: transform 2s;
+        -o-transition: transform 2s;
+        width: 100%;
+        height: 400px; }
+        .container .certificate .certificate-container .certificate-box .content .box .face {
+          width: 100%;
+          height: 100%; }
+        .container .certificate .certificate-container .certificate-box .content .box .face1 {
+          width: 250px; }
+        .container .certificate .certificate-container .certificate-box .content .box .face2 {
+          transform: rotateY(125.5deg) translate(250px, 0);
+          -webkit-transform: rotateY(125.5deg) translate(250px, 0);
+          -moz-transform: rotateY(125.5deg) translate(250px, 0);
+          -ms-transform: rotateY(125.5deg) translate(250px, 0);
+          -o-transform: rotateY(125.5deg) translate(250px, 0);
+          width: 250px; }
+        .container .certificate .certificate-container .certificate-box .content .box .face3 {
+          transform: rotateY(-125.5deg) translate(-250px, 0);
+          -webkit-transform: rotateY(-125.5deg) translate(-250px, 0);
+          -moz-transform: rotateY(-125.5deg) translate(-250px, 0);
+          -ms-transform: rotateY(-125.5deg) translate(-250px, 0);
+          -o-transform: rotateY(-125.5deg) translate(-250px, 0);
+          width: 250px; }
+      .container .certificate .certificate-container .certificate-box .content .controller {
+        width: 290px;
+        height: 20px; }
+        .container .certificate .certificate-container .certificate-box .content .controller:before, .container .certificate .certificate-container .certificate-box .content .controller:after {
+          font-size: 30px;
+          top: -35px; }
+        .container .certificate .certificate-container .certificate-box .content .controller:after {
+          left: 90px; }
+        .container .certificate .certificate-container .certificate-box .content .controller:before {
+          right: 110px; }
+  .container .certificate footer {
+    width: 400px;
+    clip-path: polygon(100% 0, 100% 50%, 86% 100%, 0 99%, 32% 0);
+    margin-left: 20px; }
+    .container .certificate footer .icon {
+      margin-left: 30px;
+      font-size: 45px; }
+      .container .certificate footer .icon a {
+        margin-right: 5px; }
+    .container .certificate footer .info {
+      margin-bottom: 30px; }
+      .container .certificate footer .info div {
+        width: 80%; }
+        .container .certificate footer .info div span {
+          font-size: 20px; }
+        .container .certificate footer .info div i {
+          font-size: 40px; }
+      .container .certificate footer .info .phone {
+        margin: 0 0 0 40px; }
+      .container .certificate footer .info .email {
+        margin: 50px 0 0 85px; }
   .container footer .icon {
     font-size: 35px; }
   .container footer .info {

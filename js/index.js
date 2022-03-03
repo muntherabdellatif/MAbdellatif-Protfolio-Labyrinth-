@@ -326,16 +326,28 @@ function setProgressBar(e) {
   const deg = (position / width) * 360;
   let shift = 0;
   const boxId = e.srcElement.dataset.id;
+  // let width = screen.width;
+
   console.log(position);
-  if (position >= 50 && position < 100) {
-    shift = 150;
+  // large screen
+  if (container.clientWidth > 450) {
+    if (position >= 100 && position < 220) {
+      shift = -150;
+    }
+    if (position >= 220 && position < 400) {
+      shift = 50;
+    }
   }
-  if (position >= 100 && position < 220) {
-    shift = -150;
+  // small screen screen
+  else {
+    if (position >= 55 && position < 150) {
+      shift = -100;
+    }
+    if (position >= 150 && position < 225) {
+      shift = 0;
+    }
   }
-  if (position >= 220 && position < 400) {
-    shift = 50;
-  }
+
   certificateBox[boxId].style.transform = `rotateY(${deg}deg)
    translate(${shift}px,0)`;
 }
