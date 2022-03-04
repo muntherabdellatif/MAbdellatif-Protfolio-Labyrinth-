@@ -71,8 +71,8 @@
           top: 2px;
           content: '';
           position: absolute;
-          width: 360px;
-          height: 360px;
+          width: 310px;
+          height: 310px;
         }
 
         &:before {
@@ -707,6 +707,9 @@
   }
 
   @keyframes typing-2 {
+    0% {
+      left: -30px;
+    }
     100% {
       left: 80%;
     }
@@ -719,8 +722,8 @@
       background-color: #c38e6c;
       top: -23px;
       right: -23px;
-      width: 345px;
-      height: 345px;
+      width: 310px;
+      height: 310px;
     }
     100% {
       @include borderRadius(50% 50% 0% 100% / 50% 100% 0% 50%);
@@ -740,8 +743,8 @@
     100% {
       @include borderRadius(50% 50% 100% 0% / 100% 50% 50% 0%);
       @include transform(0, 0, 0);
-      width: 360px;
-      height: 360px;
+      width: 310px;
+      height: 310px;
     }
   }
 
@@ -769,8 +772,8 @@
       background-color: #c38e6c;
       top: -23px;
       right: -23px;
-      width: 345px;
-      height: 345px;
+      width: 310px;
+      height: 310px;
     }
   }
 
@@ -778,8 +781,8 @@
     0% {
       @include borderRadius(50% 50% 100% 0% / 100% 50% 50% 0%);
       @include transform(0, 0, 0);
-      width: 360px;
-      height: 360px;
+      width: 310px;
+      height: 310px;
     }
     100% {
       @include borderRadius(50%);
@@ -965,7 +968,7 @@
 
         .text {
           ul {
-            height: 55px;
+            height: 60px;
 
             li {
               font-size: 54px;

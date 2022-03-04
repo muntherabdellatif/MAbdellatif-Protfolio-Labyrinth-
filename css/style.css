@@ -192,8 +192,8 @@ footer {
         top: 2px;
         content: '';
         position: absolute;
-        width: 360px;
-        height: 360px; }
+        width: 310px;
+        height: 310px; }
       .container .about .header .image-container:before {
         border-radius: 50% 50% 100% 0%/100% 50% 50% 0%;
         -webkit-border-radius: 50% 50% 100% 0%/100% 50% 50% 0%;
@@ -693,6 +693,8 @@ footer {
   100% {
     left: 100%; } }
 @keyframes typing-2 {
+  0% {
+    left: -30px; }
   100% {
     left: 80%; } }
 @keyframes backRight {
@@ -710,8 +712,8 @@ footer {
     background-color: #c38e6c;
     top: -23px;
     right: -23px;
-    width: 345px;
-    height: 345px; }
+    width: 310px;
+    height: 310px; }
   100% {
     border-radius: 50% 50% 0% 100%/50% 100% 0% 50%;
     -webkit-border-radius: 50% 50% 0% 100%/50% 100% 0% 50%;
@@ -750,8 +752,8 @@ footer {
     -moz-transform: rotate(0) translate(0, 0);
     -ms-transform: rotate(0) translate(0, 0);
     -o-transform: rotate(0) translate(0, 0);
-    width: 360px;
-    height: 360px; } }
+    width: 310px;
+    height: 310px; } }
 @keyframes fade-up {
   0% {
     transform: rotate(0) translate(0, 50px);
@@ -795,8 +797,8 @@ footer {
     background-color: #c38e6c;
     top: -23px;
     right: -23px;
-    width: 345px;
-    height: 345px; } }
+    width: 310px;
+    height: 310px; } }
 @keyframes rotateLeft {
   0% {
     border-radius: 50% 50% 100% 0%/100% 50% 50% 0%;
@@ -809,8 +811,8 @@ footer {
     -moz-transform: rotate(0) translate(0, 0);
     -ms-transform: rotate(0) translate(0, 0);
     -o-transform: rotate(0) translate(0, 0);
-    width: 360px;
-    height: 360px; }
+    width: 310px;
+    height: 310px; }
   100% {
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -910,7 +912,7 @@ footer {
   .container .certificate .arrow-box {
     width: 100vw; }
     .container .certificate .arrow-box .text ul {
-      height: 55px; }
+      height: 60px; }
       .container .certificate .arrow-box .text ul li {
         font-size: 54px;
         min-width: 360px; }
