@@ -8,6 +8,8 @@ $color4: #d3eca7;
 $color5: #fff;
 $color6: #19282f73;
 
+$SignboardNumber: 6;
+
 @mixin borderRadius($r) {
   border-radius: $r;
   -webkit-border-radius: $r;

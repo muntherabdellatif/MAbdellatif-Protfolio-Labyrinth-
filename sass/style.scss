@@ -6,7 +6,7 @@
     width: 100vw;
     height: fit-content;
     overflow-x: hidden;
-    cursor: url('../img/cursor.png');
+    // cursor: url('../img/cursor.png');
 
     p::selection,
     h1::selection,
@@ -319,7 +319,6 @@
             position: relative;
             width: 100%;
             height: 400px;
-            transform-origin: center center;
             transform-style: preserve-3d;
 
             .face {
@@ -449,6 +448,105 @@
     }
   }
 
+  .experience {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    .layer {
+      @include transition(2s);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      h2 {
+        font-size: 50px;
+      }
+
+      p {
+        font-size: 20px;
+        max-width: 80%;
+      }
+    }
+
+    .layer1 {
+      background-color: $color1;
+
+      h2,
+      p {
+        color: $color2;
+      }
+    }
+
+    .layer2 {
+      background-color: $color2;
+      h2,
+      p {
+        color: $color3;
+      }
+    }
+
+    .layer3 {
+      background-color: $color3;
+      h2,
+      p {
+        color: $color1;
+      }
+    }
+
+    .remove1 {
+      @include animation(layerMove2 2s forwards ease-in-out);
+    }
+
+    .add1 {
+      @include animation(addLayer1 2s forwards ease-in-out);
+    }
+
+    .remove2 {
+      @include animation(layerMove1 2s forwards ease-in-out);
+    }
+
+    .add2 {
+      @include animation(addLayer2 2s forwards ease-in-out);
+    }
+
+    .dot-container {
+      position: fixed;
+      z-index: 10;
+      bottom: 50px;
+      width: 70%;
+      left: 15%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .dot {
+        @include borderRadius(50%);
+        border: 1px solid $color4;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        margin-left: 60px;
+        cursor: pointer;
+        box-shadow: 0 0 20px 3px black;
+        margin: auto;
+      }
+
+      .active {
+        width: 50px;
+        height: 50px;
+        box-shadow: 0 0 20px 5px black;
+      }
+    }
+  }
+
   nav {
     margin: 0;
     padding: 0;
@@ -514,6 +612,62 @@
       li:nth-child(3).color {
         animation-delay: 0s;
       }
+    }
+  }
+
+  @keyframes layerMove1 {
+    0% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    50% {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    100% {
+      clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+  }
+
+  @keyframes addLayer1 {
+    0% {
+      clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+
+    50% {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+
+  @keyframes layerMove2 {
+    0% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    50% {
+      clip-path: polygon(100% 100%, 0 100%, 0 100%, 0 0);
+    }
+
+    100% {
+      clip-path: polygon(100% 100%, 0 100%, 0 100%, 0 100%);
+    }
+  }
+
+  @keyframes addLayer2 {
+    0% {
+      clip-path: polygon(100% 100%, 0 100%, 0 100%, 0 100%);
+    }
+
+    50% {
+      clip-path: polygon(100% 100%, 0 100%, 0 100%, 0 0);
+    }
+
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
   }
 

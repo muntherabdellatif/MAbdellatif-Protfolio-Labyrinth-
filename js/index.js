@@ -19,12 +19,14 @@ const barContainer = document.querySelectorAll(
   '.certificate .content .controller'
 );
 const certificateBox = document.querySelectorAll('.certificate .content .box');
+const layers = document.querySelectorAll('.experience .layer');
+const dot = document.querySelectorAll('.experience .dot-container .dot');
 
 const sectionsPosition = {
-  current: 1,
-  otherSide: 4,
-  left: 2,
-  right: 3,
+  current: 2,
+  otherSide: 3,
+  left: 1,
+  right: 4,
   top: 5,
   bottom: 0,
 };
@@ -32,7 +34,7 @@ const sectionsPosition = {
 const sectionsNames = [
   'About',
   'Certificates',
-  'section2',
+  'experience',
   'section3',
   'section4',
   'section5',
@@ -354,4 +356,50 @@ function setProgressBar(e) {
 
 barContainer.forEach((bar) => {
   bar.addEventListener('click', setProgressBar);
+});
+
+// experience page
+function showPage() {
+  dot.forEach((D) => {
+    D.classList.remove('active');
+  });
+  this.classList.add('active');
+  const layerNumber = this.dataset.id;
+  // add2
+  if (layerNumber == 2) {
+    layers[2].classList.remove('remove2');
+    setTimeout(() => {
+      layers[2].classList.add('add2');
+    }, 0);
+  }
+  // add1 remove2
+  else if (layerNumber == 1) {
+    layers[1].classList.remove('remove1');
+    setTimeout(() => {
+      layers[1].classList.add('add1');
+      setTimeout(() => {
+        layers[2].classList.remove('add2');
+        setTimeout(() => {
+          layers[2].classList.add('remove2');
+        }, 0);
+      }, 0);
+    }, 0);
+  }
+  // remove2 remove1
+  else {
+    layers[2].classList.remove('add2');
+    setTimeout(() => {
+      layers[2].classList.add('remove2');
+      setTimeout(() => {
+        layers[1].classList.remove('add1');
+        setTimeout(() => {
+          layers[1].classList.add('remove1');
+        }, 0);
+      }, 0);
+    }, 0);
+  }
+}
+
+dot.forEach((D) => {
+  D.addEventListener('click', showPage);
 });

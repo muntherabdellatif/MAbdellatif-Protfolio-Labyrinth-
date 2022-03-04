@@ -140,8 +140,7 @@ footer {
 .container .about {
   width: 100vw;
   height: fit-content;
-  overflow-x: hidden;
-  cursor: url("../img/cursor.png"); }
+  overflow-x: hidden; }
   .container .about p::selection,
   .container .about h1::selection,
   .container .about h2::selection,
@@ -403,7 +402,6 @@ footer {
         position: relative;
         width: 100%;
         height: 400px;
-        transform-origin: center center;
         transform-style: preserve-3d; }
         .container .certificate .certificate-container .certificate-box .content .box .face {
           width: 100%;
@@ -503,6 +501,85 @@ footer {
         margin: 22px 0 0 66px; }
       .container .certificate footer .info .email {
         margin: 50px 0 0 121px; }
+.container .experience {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+  .container .experience .layer {
+    transition: 2s;
+    -webkit-transition: 2s;
+    -moz-transition: 2s;
+    -ms-transition: 2s;
+    -o-transition: 2s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0; }
+    .container .experience .layer h2 {
+      font-size: 50px; }
+    .container .experience .layer p {
+      font-size: 20px;
+      max-width: 80%; }
+  .container .experience .layer1 {
+    background-color: #19282f; }
+    .container .experience .layer1 h2,
+    .container .experience .layer1 p {
+      color: #b33030; }
+  .container .experience .layer2 {
+    background-color: #b33030; }
+    .container .experience .layer2 h2,
+    .container .experience .layer2 p {
+      color: #a1b57d; }
+  .container .experience .layer3 {
+    background-color: #a1b57d; }
+    .container .experience .layer3 h2,
+    .container .experience .layer3 p {
+      color: #19282f; }
+  .container .experience .remove1 {
+    animation: layerMove2 2s forwards ease-in-out;
+    -webkit-animation: layerMove2 2s forwards ease-in-out; }
+  .container .experience .add1 {
+    animation: addLayer1 2s forwards ease-in-out;
+    -webkit-animation: addLayer1 2s forwards ease-in-out; }
+  .container .experience .remove2 {
+    animation: layerMove1 2s forwards ease-in-out;
+    -webkit-animation: layerMove1 2s forwards ease-in-out; }
+  .container .experience .add2 {
+    animation: addLayer2 2s forwards ease-in-out;
+    -webkit-animation: addLayer2 2s forwards ease-in-out; }
+  .container .experience .dot-container {
+    position: fixed;
+    z-index: 10;
+    bottom: 50px;
+    width: 70%;
+    left: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .container .experience .dot-container .dot {
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border: 1px solid #d3eca7;
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      margin-left: 60px;
+      cursor: pointer;
+      box-shadow: 0 0 20px 3px black;
+      margin: auto; }
+    .container .experience .dot-container .active {
+      width: 50px;
+      height: 50px;
+      box-shadow: 0 0 20px 5px black; }
 .container nav {
   margin: 0;
   padding: 0;
@@ -553,6 +630,34 @@ footer {
       animation-delay: 0.25s; }
     .container nav ul li:nth-child(3).color {
       animation-delay: 0s; }
+@keyframes layerMove1 {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+  50% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%); }
+  100% {
+    clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 0% 100%); } }
+@keyframes addLayer1 {
+  0% {
+    clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 0% 100%); }
+  50% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%); }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); } }
+@keyframes layerMove2 {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  50% {
+    clip-path: polygon(100% 100%, 0 100%, 0 100%, 0 0); }
+  100% {
+    clip-path: polygon(100% 100%, 0 100%, 0 100%, 0 100%); } }
+@keyframes addLayer2 {
+  0% {
+    clip-path: polygon(100% 100%, 0 100%, 0 100%, 0 100%); }
+  50% {
+    clip-path: polygon(100% 100%, 0 100%, 0 100%, 0 0); }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } }
 @keyframes show {
   0% {
     transform: rotate(0) translate(0, 0%);
