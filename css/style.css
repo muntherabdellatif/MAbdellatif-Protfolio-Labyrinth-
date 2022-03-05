@@ -137,6 +137,47 @@ footer {
   background-color: #19282f;
   color: #a1b57d; }
 
+.container .certificate,
+.container .skills {
+  width: fit-content;
+  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center; }
+  .container .certificate footer,
+  .container .skills footer {
+    width: 550px;
+    clip-path: polygon(100% 0, 100% 50%, 86% 100%, 0 99%, 32% 0);
+    height: 72vh;
+    background-color: #19282f; }
+    .container .certificate footer .icon,
+    .container .skills footer .icon {
+      margin-left: 30px; }
+      .container .certificate footer .icon a,
+      .container .skills footer .icon a {
+        margin-right: 15px; }
+    .container .certificate footer .info,
+    .container .skills footer .info {
+      flex-direction: column;
+      width: 100%;
+      align-items: flex-start;
+      margin-bottom: 30px; }
+      .container .certificate footer .info div,
+      .container .skills footer .info div {
+        width: 80%; }
+        .container .certificate footer .info div span,
+        .container .skills footer .info div span {
+          color: #fff; }
+      .container .certificate footer .info .phone,
+      .container .skills footer .info .phone {
+        margin: 22px 0 0 66px; }
+      .container .certificate footer .info .email,
+      .container .skills footer .info .email {
+        margin: 50px 0 0 121px; }
 .container .about {
   width: 100vw;
   height: fit-content;
@@ -336,171 +377,139 @@ footer {
   .container .about .my-job .header h2 span:first-child::before,
   .container .about .my-job .header h2 span:last-child::after {
     content: 'WHAT I AM DOING ?'; }
-.container .certificate {
-  width: fit-content;
-  height: 100vh;
-  overflow-x: scroll;
-  overflow-y: hidden;
+.container .certificate .arrow-box {
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center; }
-  .container .certificate .arrow-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80vw; }
-    .container .certificate .arrow-box .text ul {
-      list-style: none;
-      margin: 0;
-      overflow-y: hidden;
-      height: 60px; }
-      .container .certificate .arrow-box .text ul li {
-        font-size: 50px;
-        position: relative;
-        overflow: hidden;
-        min-width: 375px;
-        color: #fff; }
-        .container .certificate .arrow-box .text ul li:after {
-          animation: typing-2 1s steps(16) infinite alternate;
-          -webkit-animation: typing-2 1s steps(16) infinite alternate;
-          margin-left: 30px;
-          content: '\f061';
-          font-family: 'Font Awesome 5 Free';
-          font-weight: 900;
-          left: 0;
-          right: -5px;
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          background-color: #b33030; }
-      .container .certificate .arrow-box .text ul li {
-        animation: show 4s steps(1) infinite forwards;
-        -webkit-animation: show 4s steps(1) infinite forwards; }
-    .container .certificate .arrow-box i {
-      color: black;
+  align-items: center;
+  justify-content: center;
+  width: 80vw; }
+  .container .certificate .arrow-box .text ul {
+    list-style: none;
+    margin: 0;
+    overflow-y: hidden;
+    height: 60px; }
+    .container .certificate .arrow-box .text ul li {
       font-size: 50px;
-      font-weight: 900;
-      z-index: 1; }
-  .container .certificate .certificate-container .certificate-box {
-    display: flex; }
-    .container .certificate .certificate-container .certificate-box .content {
-      margin: 0 100px;
-      width: 400px;
-      height: 400px;
-      perspective: 1200px;
-      position: relative; }
-      .container .certificate .certificate-container .certificate-box .content:hover .controller {
-        opacity: 100%; }
-      .container .certificate .certificate-container .certificate-box .content .box {
-        transition: transform 2s;
-        -webkit-transition: transform 2s;
-        -moz-transition: transform 2s;
-        -ms-transition: transform 2s;
-        -o-transition: transform 2s;
-        position: relative;
-        width: 100%;
-        height: 400px;
-        transform-style: preserve-3d; }
-        .container .certificate .certificate-container .certificate-box .content .box .face {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          position: absolute;
-          justify-content: center;
-          align-items: center;
-          color: white;
-          backface-visibility: hidden;
-          -webkit-backface-visibility: hidden; }
-          .container .certificate .certificate-container .certificate-box .content .box .face h2 {
-            margin-left: 20px; }
-        .container .certificate .certificate-container .certificate-box .content .box .face1 {
-          width: 400px;
-          background-color: #19282f;
-          font-size: xx-large;
-          padding: 20px; }
-        .container .certificate .certificate-container .certificate-box .content .box .face2 {
-          transform: rotateY(123.5deg) translate(400px, 0);
-          -webkit-transform: rotateY(123.5deg) translate(400px, 0);
-          -moz-transform: rotateY(123.5deg) translate(400px, 0);
-          -ms-transform: rotateY(123.5deg) translate(400px, 0);
-          -o-transform: rotateY(123.5deg) translate(400px, 0);
-          transform-origin: right center;
-          width: 400px;
-          color: #fff;
-          padding: 20px;
-          font-size: 21px;
-          background-color: #a1b57d; }
-        .container .certificate .certificate-container .certificate-box .content .box .face3 {
-          transform: rotateY(-123.5deg) translate(-400px, 0);
-          -webkit-transform: rotateY(-123.5deg) translate(-400px, 0);
-          -moz-transform: rotateY(-123.5deg) translate(-400px, 0);
-          -ms-transform: rotateY(-123.5deg) translate(-400px, 0);
-          -o-transform: rotateY(-123.5deg) translate(-400px, 0);
-          transform-origin: left center;
-          width: 400px;
-          color: #19282f;
-          padding: 20px;
-          font-size: 21px;
-          background-color: #d3eca7; }
-      .container .certificate .certificate-container .certificate-box .content .controller {
-        transition: 0.5s;
-        -webkit-transition: 0.5s;
-        -moz-transition: 0.5s;
-        -ms-transition: 0.5s;
-        -o-transition: 0.5s;
-        opacity: 0;
+      position: relative;
+      overflow: hidden;
+      min-width: 375px;
+      color: #fff; }
+      .container .certificate .arrow-box .text ul li:after {
+        animation: typing-2 1s steps(16) infinite alternate;
+        -webkit-animation: typing-2 1s steps(16) infinite alternate;
+        margin-left: 30px;
+        content: '\f061';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        left: 0;
+        right: -5px;
         position: absolute;
-        top: calc(100% + 50px);
-        width: 440px;
-        height: 20px;
-        background-color: #19282f;
-        cursor: pointer;
-        border: solid 0.3px #19282f; }
-        .container .certificate .certificate-container .certificate-box .content .controller:before, .container .certificate .certificate-container .certificate-box .content .controller:after {
-          content: '\f041';
-          box-shadow: 14px 18px 20px 12px white;
-          font-family: 'Font Awesome 5 Free';
-          font-weight: 900;
-          font-size: 40px;
-          position: absolute;
-          top: -50px;
-          width: 0;
-          height: 0;
-          color: #b33030; }
-        .container .certificate .certificate-container .certificate-box .content .controller:after {
-          left: 135px; }
-        .container .certificate .certificate-container .certificate-box .content .controller:before {
-          right: 165px; }
-        .container .certificate .certificate-container .certificate-box .content .controller .bar {
-          height: 100%;
-          width: 50%;
-          background-color: #a1b57d;
-          pointer-events: none;
-          position: relative; }
-  .container .certificate footer {
-    width: 550px;
-    clip-path: polygon(100% 0, 100% 50%, 86% 100%, 0 99%, 32% 0);
-    height: 72vh;
-    background-color: #19282f; }
-    .container .certificate footer .icon {
-      margin-left: 30px; }
-      .container .certificate footer .icon a {
-        margin-right: 15px; }
-    .container .certificate footer .info {
-      flex-direction: column;
+        height: 100%;
+        width: 100%;
+        background-color: #b33030; }
+    .container .certificate .arrow-box .text ul li {
+      animation: show 4s steps(1) infinite forwards;
+      -webkit-animation: show 4s steps(1) infinite forwards; }
+  .container .certificate .arrow-box i {
+    color: black;
+    font-size: 50px;
+    font-weight: 900;
+    z-index: 1; }
+.container .certificate .certificate-container .certificate-box {
+  display: flex; }
+  .container .certificate .certificate-container .certificate-box .content {
+    margin: 0 100px;
+    width: 400px;
+    height: 400px;
+    perspective: 1200px;
+    position: relative; }
+    .container .certificate .certificate-container .certificate-box .content:hover .controller {
+      opacity: 100%; }
+    .container .certificate .certificate-container .certificate-box .content .box {
+      transition: transform 2s;
+      -webkit-transition: transform 2s;
+      -moz-transition: transform 2s;
+      -ms-transition: transform 2s;
+      -o-transition: transform 2s;
+      position: relative;
       width: 100%;
-      align-items: flex-start;
-      margin-bottom: 30px; }
-      .container .certificate footer .info div {
-        width: 80%; }
-        .container .certificate footer .info div span {
-          color: #fff; }
-      .container .certificate footer .info .phone {
-        margin: 22px 0 0 66px; }
-      .container .certificate footer .info .email {
-        margin: 50px 0 0 121px; }
+      height: 400px;
+      transform-style: preserve-3d; }
+      .container .certificate .certificate-container .certificate-box .content .box .face {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden; }
+        .container .certificate .certificate-container .certificate-box .content .box .face h2 {
+          margin-left: 20px; }
+      .container .certificate .certificate-container .certificate-box .content .box .face1 {
+        width: 400px;
+        background-color: #19282f;
+        font-size: xx-large;
+        padding: 20px; }
+      .container .certificate .certificate-container .certificate-box .content .box .face2 {
+        transform: rotateY(123.5deg) translate(400px, 0);
+        -webkit-transform: rotateY(123.5deg) translate(400px, 0);
+        -moz-transform: rotateY(123.5deg) translate(400px, 0);
+        -ms-transform: rotateY(123.5deg) translate(400px, 0);
+        -o-transform: rotateY(123.5deg) translate(400px, 0);
+        transform-origin: right center;
+        width: 400px;
+        color: #fff;
+        padding: 20px;
+        font-size: 21px;
+        background-color: #a1b57d; }
+      .container .certificate .certificate-container .certificate-box .content .box .face3 {
+        transform: rotateY(-123.5deg) translate(-400px, 0);
+        -webkit-transform: rotateY(-123.5deg) translate(-400px, 0);
+        -moz-transform: rotateY(-123.5deg) translate(-400px, 0);
+        -ms-transform: rotateY(-123.5deg) translate(-400px, 0);
+        -o-transform: rotateY(-123.5deg) translate(-400px, 0);
+        transform-origin: left center;
+        width: 400px;
+        color: #19282f;
+        padding: 20px;
+        font-size: 21px;
+        background-color: #d3eca7; }
+    .container .certificate .certificate-container .certificate-box .content .controller {
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -ms-transition: 0.5s;
+      -o-transition: 0.5s;
+      opacity: 0;
+      position: absolute;
+      top: calc(100% + 50px);
+      width: 440px;
+      height: 20px;
+      background-color: #19282f;
+      cursor: pointer;
+      border: solid 0.3px #19282f; }
+      .container .certificate .certificate-container .certificate-box .content .controller:before, .container .certificate .certificate-container .certificate-box .content .controller:after {
+        content: '\f041';
+        box-shadow: 14px 18px 20px 12px white;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 40px;
+        position: absolute;
+        top: -50px;
+        width: 0;
+        height: 0;
+        color: #b33030; }
+      .container .certificate .certificate-container .certificate-box .content .controller:after {
+        left: 135px; }
+      .container .certificate .certificate-container .certificate-box .content .controller:before {
+        right: 165px; }
+      .container .certificate .certificate-container .certificate-box .content .controller .bar {
+        height: 100%;
+        width: 50%;
+        background-color: #a1b57d;
+        pointer-events: none;
+        position: relative; }
 .container .experience {
   width: 100vw;
   height: 100vh;
@@ -580,6 +589,132 @@ footer {
       width: 50px;
       height: 50px;
       box-shadow: 0 0 20px 5px black; }
+.container .skills {
+  width: 200vw;
+  justify-content: space-between; }
+  .container .skills .land {
+    border-radius: 25% 75% 25% 75%/75% 25% 75% 25%;
+    -webkit-border-radius: 25% 75% 25% 75%/75% 25% 75% 25%;
+    -moz-border-radius: 25% 75% 25% 75%/75% 25% 75% 25%;
+    -ms-border-radius: 25% 75% 25% 75%/75% 25% 75% 25%;
+    -o-border-radius: 25% 75% 25% 75%/75% 25% 75% 25%;
+    transition: 3s;
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -ms-transition: 3s;
+    -o-transition: 3s;
+    min-width: 500px;
+    height: 500px;
+    background-color: #a1b57d;
+    overflow: hidden;
+    position: relative;
+    margin: 0 150px; }
+    .container .skills .land i {
+      transform: rotate(0) translate(-50%, -50%);
+      -webkit-transform: rotate(0) translate(-50%, -50%);
+      -moz-transform: rotate(0) translate(-50%, -50%);
+      -ms-transform: rotate(0) translate(-50%, -50%);
+      -o-transform: rotate(0) translate(-50%, -50%);
+      position: absolute;
+      color: #d3eca7;
+      font-size: 400px;
+      top: 50%;
+      left: 50%;
+      z-index: 1; }
+    .container .skills .land .text {
+      margin-top: 127px;
+      display: flex;
+      flex-direction: column;
+      color: #19282f;
+      text-align: center;
+      justify-content: center;
+      align-items: center; }
+      .container .skills .land .text h2 {
+        font-size: 50px;
+        margin: 0; }
+      .container .skills .land .text p {
+        font-size: 30px;
+        width: 450px; }
+    .container .skills .land .part {
+      transition: 3s;
+      -webkit-transition: 3s;
+      -moz-transition: 3s;
+      -ms-transition: 3s;
+      -o-transition: 3s;
+      background-color: #19282f;
+      z-index: 2;
+      position: absolute;
+      overflow: hidden; }
+      .container .skills .land .part i {
+        position: absolute;
+        color: #d3eca7;
+        font-size: 400px; }
+    .container .skills .land .part1 {
+      clip-path: polygon(0 0, 50% 0, 100% 100%, 0 50%);
+      left: 0%;
+      top: 0%;
+      width: 284px;
+      height: 272px; }
+      .container .skills .land .part1 i {
+        top: 251px;
+        left: 250px; }
+    .container .skills .land .part2 {
+      clip-path: polygon(0 100%, 0 0, 100% 50%, 50% 100%);
+      left: 0%;
+      top: 27%;
+      width: 284px;
+      height: 272px; }
+      .container .skills .land .part2 i {
+        top: 115px;
+        left: 250px; }
+    .container .skills .land .part3 {
+      clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 0);
+      left: 28%;
+      top: 0%;
+      width: 284px;
+      height: 272px; }
+      .container .skills .land .part3 i {
+        top: 251px;
+        left: 110px; }
+    .container .skills .land .part4 {
+      clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 50%);
+      left: 28%;
+      top: 54%;
+      width: 284px;
+      height: 272px; }
+      .container .skills .land .part4 i {
+        top: -20px;
+        left: 110px; }
+    .container .skills .land .part5 {
+      clip-path: polygon(0 0, 100% 50%, 100% 99%, 0% 100%);
+      left: 28%;
+      top: 81%;
+      width: 284px;
+      height: 272px; }
+      .container .skills .land .part5 i {
+        top: -155px;
+        left: 110px; }
+    .container .skills .land .part6 {
+      left: 84.5%;
+      top: 10%;
+      width: 79px;
+      height: 418px; }
+      .container .skills .land .part6 i {
+        top: 200px;
+        left: -173px; }
+    .container .skills .land .part7 {
+      left: 2%;
+      bottom: -3%;
+      width: 130px;
+      height: 113px; }
+      .container .skills .land .part7 i {
+        top: -151px;
+        left: 240px; }
+  .container .skills .land:hover {
+    width: 700px;
+    height: 700px; }
+    .container .skills .land:hover .part {
+      opacity: 0; }
 .container nav {
   margin: 0;
   padding: 0;
@@ -887,6 +1022,36 @@ footer {
 @media (max-width: 426px) {
   .container .section h1 {
     font-size: 50px; }
+  .container .certificate footer,
+  .container .skills footer {
+    width: 400px;
+    clip-path: polygon(100% 0, 100% 50%, 86% 100%, 0 99%, 32% 0);
+    margin-left: 20px; }
+    .container .certificate footer .icon,
+    .container .skills footer .icon {
+      margin-left: 30px;
+      font-size: 45px; }
+      .container .certificate footer .icon a,
+      .container .skills footer .icon a {
+        margin-right: 5px; }
+    .container .certificate footer .info,
+    .container .skills footer .info {
+      margin-bottom: 30px; }
+      .container .certificate footer .info div,
+      .container .skills footer .info div {
+        width: 80%; }
+        .container .certificate footer .info div span,
+        .container .skills footer .info div span {
+          font-size: 20px; }
+        .container .certificate footer .info div i,
+        .container .skills footer .info div i {
+          font-size: 40px; }
+      .container .certificate footer .info .phone,
+      .container .skills footer .info .phone {
+        margin: 0 0 0 40px; }
+      .container .certificate footer .info .email,
+      .container .skills footer .info .email {
+        margin: 50px 0 0 85px; }
   .container .about .header {
     flex-direction: column-reverse; }
     .container .about .header .image-container::before {
@@ -967,27 +1132,6 @@ footer {
           left: 90px; }
         .container .certificate .certificate-container .certificate-box .content .controller:before {
           right: 110px; }
-  .container .certificate footer {
-    width: 400px;
-    clip-path: polygon(100% 0, 100% 50%, 86% 100%, 0 99%, 32% 0);
-    margin-left: 20px; }
-    .container .certificate footer .icon {
-      margin-left: 30px;
-      font-size: 45px; }
-      .container .certificate footer .icon a {
-        margin-right: 5px; }
-    .container .certificate footer .info {
-      margin-bottom: 30px; }
-      .container .certificate footer .info div {
-        width: 80%; }
-        .container .certificate footer .info div span {
-          font-size: 20px; }
-        .container .certificate footer .info div i {
-          font-size: 40px; }
-      .container .certificate footer .info .phone {
-        margin: 0 0 0 40px; }
-      .container .certificate footer .info .email {
-        margin: 50px 0 0 85px; }
   .container footer .icon {
     font-size: 35px; }
   .container footer .info {
@@ -998,6 +1142,91 @@ footer {
         font-size: 35px; }
       .container footer .info div span {
         font-size: 16px; }
+  .container .skills {
+    width: 200vw; }
+    .container .skills .land {
+      min-width: 400px;
+      height: 400px;
+      margin: 0 150px 0 50px; }
+      .container .skills .land i {
+        font-size: 300px; }
+      .container .skills .land .text {
+        margin-top: 127px;
+        display: flex;
+        flex-direction: column;
+        color: #19282f;
+        text-align: center;
+        justify-content: center;
+        align-items: center; }
+        .container .skills .land .text h2 {
+          font-size: 40px;
+          margin: 0; }
+        .container .skills .land .text p {
+          font-size: 20px;
+          width: 320px; }
+      .container .skills .land .part i {
+        font-size: 300px; }
+      .container .skills .land .part1 {
+        left: 0%;
+        top: 0%;
+        width: 218px;
+        height: 218px; }
+        .container .skills .land .part1 i {
+          top: 200px;
+          left: 200px; }
+      .container .skills .land .part2 {
+        left: 0%;
+        top: 27%;
+        width: 218px;
+        height: 218px; }
+        .container .skills .land .part2 i {
+          top: 92px;
+          left: 200px; }
+      .container .skills .land .part3 {
+        left: 27%;
+        top: 0%;
+        width: 218px;
+        height: 218px; }
+        .container .skills .land .part3 i {
+          top: 201px;
+          left: 91px; }
+      .container .skills .land .part4 {
+        left: 27%;
+        top: 54%;
+        width: 218px;
+        height: 218px; }
+        .container .skills .land .part4 i {
+          top: -16px;
+          left: 91px; }
+      .container .skills .land .part5 {
+        left: 28%;
+        top: 81%;
+        width: 218px;
+        height: 218px; }
+        .container .skills .land .part5 i {
+          top: -123px;
+          left: 88px; }
+      .container .skills .land .part6 {
+        left: 80.5%;
+        top: 8%;
+        width: 81px;
+        height: 359px; }
+        .container .skills .land .part6 i {
+          top: 168px;
+          left: -123px; }
+      .container .skills .land .part7 {
+        left: 1%;
+        bottom: -2%;
+        width: 109px;
+        height: 110px; }
+        .container .skills .land .part7 i {
+          top: -99px;
+          left: 196px; }
+    .container .skills .land:hover {
+      width: 500px;
+      height: 500px; }
+      .container .skills .land:hover .part {
+        opacity: 0; }
   @keyframes showNav {
     0% {
       opacity: 0%;
