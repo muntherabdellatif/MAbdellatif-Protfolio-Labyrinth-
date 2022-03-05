@@ -557,6 +557,7 @@
     .land {
       @include borderRadius(25% 75% 25% 75% / 75% 25% 75% 25%);
       @include transition(3s);
+      width: 500px;
       min-width: 500px;
       height: 500px;
       background-color: $color3;
@@ -1275,6 +1276,7 @@
       width: 200vw;
 
       .land {
+        width: 400px;
         min-width: 400px;
         height: 400px;
         margin: 0 150px 0 50px;

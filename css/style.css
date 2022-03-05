@@ -603,6 +603,7 @@ footer {
     -moz-transition: 3s;
     -ms-transition: 3s;
     -o-transition: 3s;
+    width: 500px;
     min-width: 500px;
     height: 500px;
     background-color: #a1b57d;
@@ -1145,6 +1146,7 @@ footer {
   .container .skills {
     width: 200vw; }
     .container .skills .land {
+      width: 400px;
       min-width: 400px;
       height: 400px;
       margin: 0 150px 0 50px; }
