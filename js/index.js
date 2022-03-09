@@ -23,10 +23,10 @@ const layers = document.querySelectorAll('.experience .layer');
 const dot = document.querySelectorAll('.experience .dot-container .dot');
 
 const sectionsPosition = {
-  current: 3,
-  otherSide: 2,
-  left: 1,
-  right: 4,
+  current: 4,
+  otherSide: 1,
+  left: 2,
+  right: 3,
   top: 5,
   bottom: 0,
 };
@@ -34,9 +34,9 @@ const sectionsPosition = {
 const sectionsNames = [
   'About',
   'Certificates',
-  'experience',
-  'skills',
-  'section4',
+  'Experience',
+  'Skills',
+  'Projects',
   'section5',
 ];
 

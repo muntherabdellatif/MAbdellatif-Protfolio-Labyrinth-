@@ -716,6 +716,153 @@ footer {
     height: 700px; }
     .container .skills .land:hover .part {
       opacity: 0; }
+.container .projects .box {
+  width: 1000px;
+  height: 500px;
+  background-color: #d3eca7;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .container .projects .box .project .drop {
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    width: calc(100% / 23.9);
+    height: 540px;
+    position: absolute;
+    bottom: calc(100% + 45px); }
+    .container .projects .box .project .drop:before {
+      transform: rotate(45deg) translate(0, 0);
+      -webkit-transform: rotate(45deg) translate(0, 0);
+      -moz-transform: rotate(45deg) translate(0, 0);
+      -ms-transform: rotate(45deg) translate(0, 0);
+      -o-transform: rotate(45deg) translate(0, 0);
+      border-radius: 0% 100% 40% 60%/0% 60% 40% 100%;
+      -webkit-border-radius: 0% 100% 40% 60%/0% 60% 40% 100%;
+      -moz-border-radius: 0% 100% 40% 60%/0% 60% 40% 100%;
+      -ms-border-radius: 0% 100% 40% 60%/0% 60% 40% 100%;
+      -o-border-radius: 0% 100% 40% 60%/0% 60% 40% 100%;
+      transition: 1s;
+      -webkit-transition: 1s;
+      -moz-transition: 1s;
+      -ms-transition: 1s;
+      -o-transition: 1s;
+      content: '';
+      border: 1px solid #a1b57d;
+      margin: auto;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      position: absolute;
+      bottom: -23px;
+      left: -5px;
+      z-index: 6; }
+  .container .projects .box .project .drop:nth-child(1) {
+    left: calc((100% / 24) * (1 - 1));
+    transition-delay: calc((0.5 + (1 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(2) {
+    left: calc((100% / 24) * (2 - 1));
+    transition-delay: calc((0.5 + (2 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(3) {
+    left: calc((100% / 24) * (3 - 1));
+    transition-delay: calc((0.5 + (3 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(4) {
+    left: calc((100% / 24) * (4 - 1));
+    transition-delay: calc((0.5 + (4 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(5) {
+    left: calc((100% / 24) * (5 - 1));
+    transition-delay: calc((0.5 + (5 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(6) {
+    left: calc((100% / 24) * (6 - 1));
+    transition-delay: calc((0.5 + (6 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(7) {
+    left: calc((100% / 24) * (7 - 1));
+    transition-delay: calc((0.5 + (7 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(8) {
+    left: calc((100% / 24) * (8 - 1));
+    transition-delay: calc((0.5 + (8 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(9) {
+    left: calc((100% / 24) * (9 - 1));
+    transition-delay: calc((0.5 + (9 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(10) {
+    left: calc((100% / 24) * (10 - 1));
+    transition-delay: calc((0.5 + (10 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(11) {
+    left: calc((100% / 24) * (11 - 1));
+    transition-delay: calc((0.5 + (11 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(12) {
+    left: calc((100% / 24) * (12 - 1));
+    transition-delay: calc((0.5 + (12 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(13) {
+    left: calc((100% / 24) * (13 - 1));
+    transition-delay: calc((0.5 + (13 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(14) {
+    left: calc((100% / 24) * (14 - 1));
+    transition-delay: calc((0.5 + (14 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(15) {
+    left: calc((100% / 24) * (15 - 1));
+    transition-delay: calc((0.5 + (15 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(16) {
+    left: calc((100% / 24) * (16 - 1));
+    transition-delay: calc((0.5 + (16 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(17) {
+    left: calc((100% / 24) * (17 - 1));
+    transition-delay: calc((0.5 + (17 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(18) {
+    left: calc((100% / 24) * (18 - 1));
+    transition-delay: calc((0.5 + (18 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(19) {
+    left: calc((100% / 24) * (19 - 1));
+    transition-delay: calc((0.5 + (19 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(20) {
+    left: calc((100% / 24) * (20 - 1));
+    transition-delay: calc((0.5 + (20 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(21) {
+    left: calc((100% / 24) * (21 - 1));
+    transition-delay: calc((0.5 + (21 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(22) {
+    left: calc((100% / 24) * (22 - 1));
+    transition-delay: calc((0.5 + (22 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(23) {
+    left: calc((100% / 24) * (23 - 1));
+    transition-delay: calc((0.5 + (23 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .drop:nth-child(24) {
+    left: calc((100% / 24) * (24 - 1));
+    transition-delay: calc((0.5 + (24 - 1) * 0.2) * 1s); }
+  .container .projects .box .project .text {
+    color: #d3eca7;
+    text-align: center;
+    z-index: 5;
+    position: relative;
+    width: 100%;
+    display: none; }
+    .container .projects .box .project .text h2 {
+      margin-top: 0;
+      font-size: 50px; }
+    .container .projects .box .project .text p {
+      max-width: 80%;
+      margin: auto;
+      font-size: 20px; }
+  .container .projects .box .project1 .drop {
+    background-color: #19282f; }
+    .container .projects .box .project1 .drop:before {
+      background-color: #19282f; }
+  .container .projects .box .project2 .drop {
+    background-color: #b33030; }
+    .container .projects .box .project2 .drop:before {
+      background-color: #b33030; }
+  .container .projects .box .project3 .drop {
+    background-color: #a1b57d; }
+    .container .projects .box .project3 .drop:before {
+      background-color: #a1b57d; }
+  .container .projects .box .project.active .drop {
+    bottom: -40px; }
+  .container .projects .box .project.active .text {
+    display: block; }
 .container nav {
   margin: 0;
   padding: 0;
