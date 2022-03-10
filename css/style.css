@@ -1078,8 +1078,8 @@ footer {
     -ms-transform: rotate(45deg) translate(0, 0);
     -o-transform: rotate(45deg) translate(0, 0);
     background-color: #c38e6c;
-    top: -23px;
-    right: -23px;
+    top: -26.5px;
+    right: -26.5px;
     width: 310px;
     height: 310px; } }
 @keyframes rotateLeft {
