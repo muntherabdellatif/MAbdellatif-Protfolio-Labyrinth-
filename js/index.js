@@ -25,12 +25,12 @@ const project = document.querySelectorAll('.projects .box .project');
 const drop = document.querySelectorAll('.projects .controller .drop');
 
 const sectionsPosition = {
-  current: 4,
-  otherSide: 1,
+  current: 5,
+  otherSide: 0,
   left: 2,
   right: 3,
-  top: 5,
-  bottom: 0,
+  top: 4,
+  bottom: 1,
 };
 
 const sectionsNames = [
@@ -39,7 +39,7 @@ const sectionsNames = [
   'Experience',
   'Skills',
   'Projects',
-  'section5',
+  'Contact',
 ];
 
 let delayTime = 600;
