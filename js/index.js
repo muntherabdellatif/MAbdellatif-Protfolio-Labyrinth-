@@ -21,6 +21,8 @@ const barContainer = document.querySelectorAll(
 const certificateBox = document.querySelectorAll('.certificate .content .box');
 const layers = document.querySelectorAll('.experience .layer');
 const dot = document.querySelectorAll('.experience .dot-container .dot');
+const project = document.querySelectorAll('.projects .box .project');
+const drop = document.querySelectorAll('.projects .controller .drop');
 
 const sectionsPosition = {
   current: 4,
@@ -402,4 +404,33 @@ function showPage() {
 
 dot.forEach((D) => {
   D.addEventListener('click', showPage);
+});
+
+// project
+
+function changeProject() {
+  const currentProject = this.dataset.id;
+  // drop animation
+  drop.forEach((d) => d.classList.remove('active'));
+  this.classList.add('active');
+  // project animation
+  // 1 remove class from projects
+  project.forEach((p) => {
+    p.classList.remove('active');
+  });
+  // add project after time
+  setTimeout(() => {
+    project[currentProject].classList.add('active');
+  }, 2000);
+  // 3 replace text after time
+  setTimeout(() => {
+    project.forEach((p) => {
+      p.querySelector('.text').classList.remove('active');
+    });
+    project[currentProject].querySelector('.text').classList.add('active');
+  }, 2400);
+}
+
+drop.forEach((D) => {
+  D.addEventListener('click', changeProject);
 });
