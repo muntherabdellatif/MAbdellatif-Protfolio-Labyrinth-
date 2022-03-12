@@ -67,18 +67,18 @@
 
 .container .section:nth-last-of-type(1),
 .container .section:nth-last-of-type(6) {
-  background-color: $color1;
-  color: $color3;
+  background-color: var(--color1);
+  color: var(--color3);
 }
 
 .container .section:nth-last-of-type(2),
 .container .section:nth-last-of-type(5) {
-  background-color: $color2;
-  color: $color1;
+  background-color: var(--color2);
+  color: var(--color1);
 }
 
 .container .section:nth-last-of-type(3),
 .container .section:nth-last-of-type(4) {
-  background-color: $color3;
-  color: $color2;
+  background-color: var(--color3);
+  color: var(--color2);
 }

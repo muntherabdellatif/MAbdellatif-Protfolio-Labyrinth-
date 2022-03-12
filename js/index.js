@@ -14,7 +14,9 @@ const howAmIDescription = document.querySelector(
   '.about .how-am-i .description'
 );
 const myJobDescription = document.querySelector('.about .my-job .description');
-const links = document.querySelectorAll('footer .info div');
+const links = document.querySelectorAll(
+  'footer .info div , .contact .email , .contact .phone'
+);
 const barContainer = document.querySelectorAll(
   '.certificate .content .controller'
 );
@@ -23,6 +25,13 @@ const layers = document.querySelectorAll('.experience .layer');
 const dot = document.querySelectorAll('.experience .dot-container .dot');
 const project = document.querySelectorAll('.projects .box .project');
 const drop = document.querySelectorAll('.projects .controller .drop');
+const themeIcon = document.querySelector('.contact .color-icon');
+const themeContainer = document.querySelector(
+  '.contact .color-icon .theme-container'
+);
+const themes = document.querySelectorAll('.contact .color-icon .theme');
+const contactSection = sections[5];
+const lands = document.querySelectorAll('.contact .map .land');
 
 const sectionsPosition = {
   current: 5,
@@ -433,4 +442,87 @@ function changeProject() {
 
 drop.forEach((D) => {
   D.addEventListener('click', changeProject);
+});
+
+// change theme
+const themeArray = [
+  {
+    '--color1': '#19282f',
+    '--color2': '#b33030',
+    '--color3': '#a1b57d',
+    '--color4': '#d3eca7',
+    '--color5': '#fff',
+    '--color6': '#19282f73',
+    '--color7': '#535e40',
+  },
+  {
+    '--color1': '#0f0e0e',
+    '--color2': '#541212',
+    '--color3': '#8b9a46',
+    '--color4': '#eeeeee',
+    '--color5': '#fff',
+    '--color6': '#19282f73',
+    '--color7': '#535e40',
+  },
+  {
+    '--color1': '#000000',
+    '--color2': '#aa14f0',
+    '--color3': '#bc8cf2',
+    '--color4': '#eeeeee',
+    '--color5': '#fff',
+    '--color6': '#19282f73',
+    '--color7': '#535e40',
+  },
+];
+
+function setTheme(themeNumber) {
+  const keys = Object.keys(themeArray[themeNumber]);
+  keys.forEach((key) => {
+    document.documentElement.style.setProperty(
+      key,
+      themeArray[themeNumber][key]
+    );
+  });
+}
+
+function toggleThemes() {
+  themeContainer.classList.toggle('active');
+}
+
+function changeTheme() {
+  const themeNumber = this.dataset.id;
+  setTheme(themeNumber);
+}
+
+themeIcon.addEventListener('click', toggleThemes);
+themes.forEach((theme) => {
+  theme.addEventListener('click', changeTheme);
+});
+
+// onload
+setTheme(0);
+
+function shrinkMap() {
+  contactSection.classList.add('be-nav');
+  switch (this.classList[1]) {
+    case 'experience-land':
+      console.log('go right');
+      break;
+    case 'about-land':
+      console.log('go left');
+      break;
+    case 'skills-land':
+      console.log('go up');
+      break;
+    case 'certificate-land':
+      console.log('go down');
+      break;
+    case 'projects-land':
+      console.log('go up then left');
+      break;
+  }
+}
+
+lands.forEach((land) => {
+  land.addEventListener('click', shrinkMap);
 });
