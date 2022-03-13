@@ -65,20 +65,20 @@
   font-size: 100px;
 }
 
-.container .section:nth-last-of-type(1),
-.container .section:nth-last-of-type(6) {
+.container .about,
+.container .contact {
   background-color: var(--color1);
   color: var(--color3);
 }
 
-.container .section:nth-last-of-type(2),
-.container .section:nth-last-of-type(5) {
+.container .certificate,
+.container .projects {
   background-color: var(--color2);
   color: var(--color1);
 }
 
-.container .section:nth-last-of-type(3),
-.container .section:nth-last-of-type(4) {
+.container .experience,
+.container .skills {
   background-color: var(--color3);
   color: var(--color2);
 }

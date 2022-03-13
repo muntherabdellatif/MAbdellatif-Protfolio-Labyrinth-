@@ -43,10 +43,10 @@ const sectionsPosition = {
 };
 
 const sectionsNames = [
-  'About',
   'Certificates',
-  'Experience',
   'Skills',
+  'About',
+  'Experience',
   'Projects',
   'Contact',
 ];
@@ -502,23 +502,52 @@ themes.forEach((theme) => {
 // onload
 setTheme(0);
 
-function shrinkMap() {
+async function shrinkMap() {
   contactSection.classList.add('be-nav');
   switch (this.classList[1]) {
     case 'experience-land':
-      console.log('go right');
+      scrollHorizontally();
+      reverseDirection();
+      showSection(2);
+      await goToSectionPro(2);
+      sectionsPosition.current(2);
+      showCurrent();
       break;
+
     case 'about-land':
-      console.log('go left');
+      scrollHorizontally();
+      rightDirection();
+      showSection(0);
+      await goToSectionPro(0);
+      sectionsPosition.current(0);
+      showCurrent();
       break;
+
     case 'skills-land':
-      console.log('go up');
+      scrollVertically();
+      rightDirection();
+      showSection(3);
+      await goToSectionPro(3);
+      sectionsPosition.current(3);
+      showCurrent();
       break;
+
     case 'certificate-land':
-      console.log('go down');
+      scrollVertically();
+      reverseDirection();
+      showSection(1);
+      await goToSectionPro(1);
+      sectionsPosition.current(1);
+      showCurrent();
       break;
+
     case 'projects-land':
-      console.log('go up then left');
+      scrollHorizontally();
+      reverseDirection();
+      showSection(4);
+      await goToSectionPro(4);
+      sectionsPosition.current(4);
+      showCurrent();
       break;
   }
 }
