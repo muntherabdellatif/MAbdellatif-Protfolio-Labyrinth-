@@ -1,13 +1,5 @@
 const sections = document.querySelectorAll('.section');
 const container = document.querySelector('.container');
-const UpLink = document.getElementById('up');
-const downLink = document.getElementById('down');
-const leftLink = document.getElementById('left');
-const rightLink = document.getElementById('right');
-const otherSideLink = document.getElementById('other-side');
-const navBar = document.querySelectorAll('nav ul li');
-const navList = document.querySelector('.nav-list');
-const dice = document.querySelector('.dice');
 const aboutImgContainer = document.querySelector('.about .image-container');
 const aboutImg = document.querySelector('.about .image-container img');
 const howAmIDescription = document.querySelector(
@@ -41,15 +33,6 @@ const sectionsPosition = {
   top: 4,
   bottom: 1,
 };
-
-const sectionsNames = [
-  'Certificates',
-  'Skills',
-  'About',
-  'Experience',
-  'Projects',
-  'Contact',
-];
 
 let delayTime = 600;
 let isScrolling = false;
@@ -224,49 +207,9 @@ function goOtherSide() {
   }
 }
 
-// nav animation
-
-function changeNavName() {
-  navBar.forEach((e) => e.classList.add('color'));
-  setTimeout(() => {
-    navBar.forEach((e) => e.classList.remove('color'));
-    UpLink.textContent = sectionsNames[sectionsPosition.top];
-    downLink.textContent = sectionsNames[sectionsPosition.bottom];
-    leftLink.textContent = sectionsNames[sectionsPosition.left];
-    rightLink.textContent = sectionsNames[sectionsPosition.right];
-    otherSideLink.textContent = sectionsNames[sectionsPosition.otherSide];
-  }, 1500);
-}
-
-// moving event listener
-downLink.addEventListener('click', () => {
-  go('bottom');
-  changeNavName();
-});
-
-UpLink.addEventListener('click', () => {
-  go('top');
-  changeNavName();
-});
-
-leftLink.addEventListener('click', () => {
-  go('left');
-  changeNavName();
-});
-
-rightLink.addEventListener('click', () => {
-  go('right');
-  changeNavName();
-});
-
-otherSideLink.addEventListener('click', () => {
-  goOtherSide();
-});
-
 // on load
 goToSectionPro(sectionsPosition.current);
 showCurrent();
-changeNavName();
 
 container.onscroll = function () {
   navList.classList.remove('active');
@@ -299,12 +242,6 @@ container.onscroll = function () {
   //   isScrolling = false;
   // }
 };
-
-// navbar on mobile
-
-dice.addEventListener('click', () => {
-  navList.classList.toggle('active');
-});
 
 // about
 
